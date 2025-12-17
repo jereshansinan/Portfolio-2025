@@ -11,10 +11,11 @@ import AI from './pages/AI';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Loader from './components/Loader';
+import LenisWrapper from './components/Lenis';
 
 const App: React.FC = () => {
   return (
-    <>
+    <LenisWrapper>
       <Loader />
       <Router>
         <Navbar />
@@ -41,7 +42,7 @@ const App: React.FC = () => {
           </main>
         </div>
       </Router>
-    </>
+    </LenisWrapper>
   );
 };
 

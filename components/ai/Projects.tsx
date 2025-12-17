@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 
 // 1. Define the shape of the data
 interface ProjectProps {
@@ -10,14 +15,14 @@ interface ProjectProps {
 }
 
 // 2. The Single Project Card Component
-const ProjectCard = ({ 
-    image, 
-    title, 
-    description, 
-    link, 
-    onMouseEnter, 
-    onMouseLeave 
-}: ProjectProps & { onMouseEnter: () => void, onMouseLeave: () => void }) => {
+const ProjectCard = ({
+  image,
+  title,
+  description,
+  link,
+  onMouseEnter,
+  onMouseLeave,
+}: ProjectProps & { onMouseEnter: () => void; onMouseLeave: () => void }) => {
   return (
     <a
       className="block relative w-full h-[60vh] md:h-[80vh] rounded-[15px] overflow-hidden group font-mono cursor-none"
@@ -36,8 +41,12 @@ const ProjectCard = ({
       {/* The Glass Block */}
       <div className="absolute bottom-0 left-0 w-full backdrop-blur-md bg-black/40 border-t border-white/10 p-6 md:p-8 rounded-b-[15px]">
         <div className="flex flex-col items-start justify-end h-full">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{title}</h3>
-          <p className="text-gray-200 text-sm md:text-lg line-clamp-3 md:line-clamp-none">{description}</p>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+            {title}
+          </h3>
+          <p className="text-gray-200 text-sm md:text-lg line-clamp-3 md:line-clamp-none">
+            {description}
+          </p>
         </div>
       </div>
     </a>
@@ -48,7 +57,7 @@ const ProjectCard = ({
 const ProjectCursor = ({ isHovering }: { isHovering: boolean }) => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  
+
   // Smooth spring configuration for "delayed but smooth" feel
   const springConfig = { damping: 25, stiffness: 150 }; // Lower stiffness = more delay
   const cursorXSpring = useSpring(cursorX, springConfig);
@@ -106,22 +115,36 @@ const AIProjects = ({ items }: AIProjectsProps) => {
   const [isHoveringProject, setIsHoveringProject] = useState(false);
 
   return (
-    <>
-      <div className="px-6 md:px-12 lg:px-28 flex flex-col gap-12 py-12 relative z-10 bg-white">
-        {items.map((project, index) => (
-          <ProjectCard
-            key={index}
-            description={project.description}
-            image={project.image}
-            link={project.link}
-            title={project.title}
-            onMouseEnter={() => setIsHoveringProject(true)}
-            onMouseLeave={() => setIsHoveringProject(false)}
-          />
-        ))}
-      </div>
+    <div className="relative w-full bg-white">
+      {/* Sticky Stack Implementation */}
+      {items.map((project, index) => (
+        <div
+          key={index}
+          className="sticky top-0 h-screen w-full flex items-center justify-center bg-white border-t border-gray-100 overflow-hidden px-4 md:px-12"
+          style={{
+            zIndex: index + 1,
+          }}
+          // Handle hover state here on the full-screen container for reliable cursor detection
+          onMouseEnter={() => setIsHoveringProject(true)}
+          onMouseLeave={() => setIsHoveringProject(false)}
+        >
+          {/* Content container - constrained width but full height for centering */}
+          <div className="w-full max-w-7xl h-full py-8 md:py-12 flex flex-col justify-center">
+            <ProjectCard
+              description={project.description}
+              image={project.image}
+              link={project.link}
+              title={project.title}
+              onMouseEnter={() => setIsHoveringProject(true)}
+              onMouseLeave={() => setIsHoveringProject(false)}
+            />
+          </div>
+        </div>
+      ))}
+
+      {/* Custom Cursor Logic */}
       <ProjectCursor isHovering={isHoveringProject} />
-    </>
+    </div>
   );
 };
 

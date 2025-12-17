@@ -1,16 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Certificates from '../components/Certificates';
-import ProjectRow from '../components/programming/ProjectRow';
-import Specialising from '../components/programming/Specialising';
-import Scene3D from '../components/Scene3D';
+import React from "react";
+import { Link } from "react-router-dom";
+import Certificates from "../components/Certificates";
+import ProjectRow from "../components/programming/ProjectRow";
+import Specialising from "../components/programming/Specialising";
+import Scene3D from "../components/Scene3D";
 
 const background = [
   {
     id: 1,
-    background: ""
-  }
-]
+    background: "",
+  },
+];
 const myCertificates = [
   {
     id: 1,
@@ -19,7 +19,7 @@ const myCertificates = [
     title: "Microsoft Technology Associate",
     date: "December 2020",
     link: "#",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
+    image: "./MTACert.jpg",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const myCertificates = [
     title: "FNB Certificate in Full Stack Development",
     date: "July 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop"
+    image: "./FNBCert.png",
   },
 ];
 
@@ -38,9 +38,9 @@ export default function Programming() {
       {/* Hero Section with 3D Scene */}
       <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-16 md:py-24 relative bg-slate-900 overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
-            <Scene3D background='./programming.mp4'/>
+          <Scene3D background="./programming.mp4" />
         </div>
-        
+
         <div className="inline-block max-w-xl text-center relative z-10 px-4">
           <h1 className="text-4xl md:text-6xl text-white leading-tight font-mono font-bold tracking-tighter">
             Programming
@@ -67,7 +67,7 @@ export default function Programming() {
             <div className="p-[1px] rounded-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md hover:shadow-lg transition-shadow">
               <Link to="/programming/projects">
                 <button className="bg-white text-black rounded-[9px] px-6 py-2 text-xl font-mono font-bold hover:bg-gray-50 transition-colors">
-                    View All
+                  View All
                 </button>
               </Link>
             </div>
@@ -77,25 +77,25 @@ export default function Programming() {
 
       <div className="flex flex-col w-full">
         <ProjectRow
-            description="A centralized fitness & coaching platform replacing third-party tools with custom dashboards for clients and admins."
-            image="./molende.png"
-            number={1}
-            stack={["React", "Next.js", "Supabase", "Clerk"]}
-            title="Molende Sports"
+          description="A centralized fitness & coaching platform replacing third-party tools with custom dashboards for clients and admins."
+          image="./molende.png"
+          number={1}
+          stack={["React", "Next.js", "Supabase", "Clerk"]}
+          title="Molende Sports"
         />
         <ProjectRow
-            description="A full CRM application handling task management, customer tracking, and REST API integrations."
-            image="./vucadigital.png"
-            number={2}
-            stack={["Android Studio", "Firebase", "Supabase", "CI/CD"]}
-            title="VUCA Digital CRM"
+          description="A full CRM application handling task management, customer tracking, and REST API integrations."
+          image="./vucadigital.png"
+          number={2}
+          stack={["Android Studio", "Firebase", "Supabase", "CI/CD"]}
+          title="VUCA Digital CRM"
         />
         <ProjectRow
-            description="A responsive brand website highlighting the menu and ordering process, featuring custom design and Vercel deployment."
-            image="./indiansavoury.jpg"
-            number={3}
-            stack={["React", "Next.js", "Hero UI", "Figma"]}
-            title="Indian Savoury Delights"
+          description="A responsive brand website highlighting the menu and ordering process, featuring custom design and Vercel deployment."
+          image="./indiansavoury.jpg"
+          number={3}
+          stack={["React", "Next.js", "Hero UI", "Figma"]}
+          title="Indian Savoury Delights"
         />
       </div>
 
