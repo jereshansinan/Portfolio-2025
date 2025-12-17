@@ -14,6 +14,8 @@ const Navbar: React.FC = () => {
   const menuLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const socialLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
+  const videoEmbedUrl =
+    "https://www.youtube.com/embed/h62aeDVJ9IA?autoplay=1&mute=1&loop=1&playlist=h62aeDVJ9IA&controls=0";
   useEffect(() => {
     // Close menu on route change
     if (isOpen) toggleMenu();
@@ -149,12 +151,20 @@ const Navbar: React.FC = () => {
         <div ref={menuContentRef} className="menu-content">
           <div className="menu-items">
             <div className="col-lg">
-              <div ref={menuPreviewImgRef} className="menu-preview-img">
-                <img
-                  alt="preview"
+              <div
+                ref={menuPreviewImgRef}
+                className="menu-preview-img w-[40%] h-96"
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover"
-                  src="https://picsum.photos/seed/menu/600/800"
-                />
+                >
+                  <source src='./menuhero.mkv' type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
 

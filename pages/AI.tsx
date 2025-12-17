@@ -11,7 +11,7 @@ const myCertificates = [
     title: "Oracle Generative AI Professional",
     date: "October 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1530&auto=format&fit=crop"
+    image: "./OracleCerts/genai.png"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const myCertificates = [
     title: "Oracle Certified AI Foundations Associate",
     date: "August 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1632&auto=format&fit=crop"
+    image: "./OracleCerts/AIFoundations.png"
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const myCertificates = [
     title: "IBM - Python for Data Science and AI",
     date: "November 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1470&auto=format&fit=crop"
+    image: "./AICerts/Coursera Python for data science, AI and Development-1.jpg"
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const myCertificates = [
     title: "Intel - AI Essentials",
     date: "August 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1692312358828-56df82522730?q=80&w=1470&auto=format&fit=crop"
+    image: "./AICerts/Coursera Intel AI-1.jpg"
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const myCertificates = [
     title: "DeepLearning.AI - AI For Everyone",
     date: "August 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?q=80&w=1631&auto=format&fit=crop"
+    image: "./AICerts/Coursera AI for Everyone-1.jpg"
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ const myCertificates = [
     title: "Microsoft - Artificial Intelligence on Azure",
     date: "August 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1633419461186-7d40a2e50e38?q=80&w=1470&auto=format&fit=crop"
+    image: "./AICerts/Coursera AI on Microsoft Azure-1.jpg"
   },
   {
     id: 7,
@@ -65,7 +65,7 @@ const myCertificates = [
     title: "AWS - Generative AI with LLMs",
     date: "August 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472&auto=format&fit=crop"
+    image: "./AICerts/Coursera Generative AI with LLMs-1.jpg"
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ const myCertificates = [
     title: "IBM - Introduction to AI",
     date: "August 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1535378437327-b7149b379bab?q=80&w=1470&auto=format&fit=crop"
+    image: "./AICerts/Coursera IBM Intro to AI v2-1.jpg"
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ const myCertificates = [
     title: "Google - Introduction to Generative AI",
     date: "August 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1469&auto=format&fit=crop"
+    image: "./AICerts/Coursera Intro to Responsible AI-1.jpg"
   },
   {
     id: 10,
@@ -92,7 +92,43 @@ const myCertificates = [
     title: "JHU - Trustworthy AI: Managing Bias",
     date: "November 2025",
     link: "#",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1470&auto=format&fit=crop"
+    image: "./AICerts/Coursera Trustworthy AI - Managing Bias - Ethics and Accountability-1.jpg"
+  },
+  {
+    id: 11,
+    background: "white",
+    textcolor: "#000",
+    title: "ASU - Prompt Engineering with ChatGPT",
+    date: "October 2025",
+    link: "#",
+    image: "./AICerts/Coursera AI Foundations - Prompt Engineering with ChatGPT-1.jpg"
+  },
+  {
+    id: 12,
+    background: "white",
+    textcolor: "#000",
+    title: "IBM - Building AI Powered Chatbots",
+    date: "November 2025",
+    link: "#",
+    image: "./AICerts/Coursera Building AI Powered Chatbots Without Programming-1.jpg"
+  },
+  {
+    id: 13,
+    background: "white",
+    textcolor: "#000",
+    title: "Generative AI for Everyone",
+    date: "November 2025",
+    link: "#",
+    image: "./AICerts/Coursera Generative AI for Everyone-1.jpg"
+  },
+  {
+    id: 14,
+    background: "white",
+    textcolor: "#000",
+    title: "Google - Generative AI",
+    date: "November 2025",
+    link: "#",
+    image: "./AICerts/Coursera Google Cloud Gen AI-1.jpg"
   },
 ];
 
@@ -145,19 +181,15 @@ export default function AIPage() {
   return (
     <div className="bg-white min-h-screen font-broft">
       {/* Hero Section with 3D Scene */}
-      <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative bg-black overflow-hidden h-[60vh] md:h-[80vh]">
+      <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative bg-black overflow-hidden h-[60vh] md:h-[100vh]">
          <div className="absolute inset-0 z-0">
-            <Scene3D />
+            <Scene3D background='./2.png'/>
         </div>
-        <div className="absolute inset-0 bg-black/40 z-0 pointer-events-none" />
         
         <div className="inline-block max-w-xl text-center relative z-10 px-4">
           <h1 className="text-6xl md:text-9xl text-white leading-tight font-bold tracking-tighter">
             AI
           </h1>
-          <p className="mt-4 text-gray-300 text-xl">
-            Artificial Intelligence & Machine Learning
-          </p>
         </div>
       </section>
 

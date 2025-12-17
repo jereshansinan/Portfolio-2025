@@ -70,5 +70,4 @@ export const SOCIALS: SocialLink[] = [
   { platform: "GitHub", url: "https://github.com", icon: Github },
   { platform: "LinkedIn", url: "https://linkedin.com", icon: Linkedin },
   { platform: "Behance", url: "https://behance.net", icon: Dribbble },
-  { platform: "Email", url: "mailto:hello@example.com", icon: Mail },
 ];

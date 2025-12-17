@@ -42,7 +42,7 @@ const ProjectRow: React.FC<ProjectsProps> = ({
       <div className="flex-1 p-4 md:p-2 flex items-center justify-center border-t md:border-t-0 border-gray-200">
         <img
           alt={String(title)}
-          className="w-full md:max-w-[80%] max-h-64 md:max-h-72 object-contain rounded-md shadow-sm"
+          className="w-full md:max-w-[90%] max-h-64 md:max-h-72 object-contain rounded-md shadow-sm"
           src={image}
         />
       </div>

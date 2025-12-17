@@ -76,7 +76,7 @@ const Home: React.FC = () => {
     <div className="relative w-full h-screen overflow-hidden bg-[#1e293b]">
       {/* Fixed 3D Scene Background - Always present but revealed via cutout or after transition */}
       <div className="fixed inset-0 z-0">
-        <Scene3D />
+        <Scene3D background='./programming.mp4' />
       </div>
 
       <AnimatePresence>

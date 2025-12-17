@@ -24,6 +24,10 @@ declare global {
   }
 }
 
+interface SceneProps {
+  background: string | string;
+}
+
 const AnimatedShapes = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   const meshRef2 = useRef<THREE.Mesh>(null);
@@ -43,6 +47,7 @@ const AnimatedShapes = () => {
       meshRef3.current.rotation.z += delta * 0.1;
     }
   });
+  
 
   return (
     <>
@@ -90,21 +95,32 @@ const AnimatedShapes = () => {
   );
 };
 
-const Scene3D: React.FC = () => {
+const Scene3D: React.FC<SceneProps> = ({
+  background
+}) => {
+  const isImage = typeof background === 'string' && /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(background);
   return (
+    
     <div className="w-full h-full relative">
       {/* VIDEO BACKGROUND (Temporary Placeholder) */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover"
-      >
-        {/* Replace '/blackhole.mp4' with your actual video file in the public folder */}
-        <source src="/blackhole.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {isImage ? (
+        <img
+          src={background}
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={background} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
 
       {/* Optional: Dark overlay to ensure text legibility if the video is too bright */}
       <div className="absolute inset-0 bg-black/20 pointer-events-none" />

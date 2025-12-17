@@ -91,19 +91,15 @@ export default function UIUX() {
       </div>
 
       {/* Hero Section with 3D Scene - Excluded from Mask Effect */}
-      <section className="z-20 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative overflow-hidden h-[60vh] md:h-[80vh]">
+      <section className="z-20 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative overflow-hidden h-[60vh] md:h-[100vh]">
          <div className="absolute inset-0 z-0">
-            <Scene3D />
+            <Scene3D background='./5.png'/>
         </div>
-        <div className="absolute inset-0 bg-[#171717]/60 z-0 pointer-events-none" />
         
         <div className="inline-block max-w-4xl text-center relative z-10 px-4">
           <h1 className="text-6xl md:text-9xl text-white leading-tight font-bold tracking-tighter mix-blend-overlay">
             UI/UX
           </h1>
-          <p className="mt-6 text-gray-400 text-xl md:text-2xl max-w-2xl mx-auto">
-            Crafting digital experiences where logic meets creativity.
-          </p>
         </div>
       </section>
 
@@ -165,21 +161,21 @@ export default function UIUX() {
             <Featured
                 date={"11/2024"}
                 description="A responsive brand website highlighting the menu and ordering process, featuring custom design."
-                image="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1470&auto=format&fit=crop"
+                image="./indiansavoury.jpg"
                 stack={["React", "TypeScript", "Node"]}
                 title="Indian Savoury Delights"
             />
             <Featured
                 date={"10/2024"}
                 description="A full CRM application handling task management, customer tracking, and REST API integrations."
-                image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop"
+                image="./vucadigital.png"
                 stack={["React", "TypeScript", "Node"]}
                 title="VUCA Digital CRM"
             />
             <Featured
                 date={"09/2024"}
                 description="A centralized fitness & coaching platform replacing third-party tools with custom dashboards."
-                image="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop"
+                image="./molende.png"
                 stack={["React", "TypeScript", "Node"]}
                 title="Molende Sports"
             />

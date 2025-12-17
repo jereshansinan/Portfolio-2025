@@ -5,11 +5,10 @@ export default function DataEngineering() {
   return (
     <div className="min-h-screen bg-[#171717]">
       {/* Hero Section with 3D Scene */}
-      <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-8 md:py-10 relative overflow-hidden h-[60vh]">
+      <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-8 md:py-10 relative overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
-            <Scene3D />
+            <Scene3D background='./3.png'/>
         </div>
-        <div className="absolute inset-0 bg-black/40 z-0 pointer-events-none" />
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">
           <h1 className="text-4xl md:text-6xl text-white leading-tight font-mono font-bold tracking-tight">
