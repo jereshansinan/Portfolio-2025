@@ -30,7 +30,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "IBM - Python for Data Science and AI",
     date: "November 2025",
-    link: "#",
+    link: "https://coursera.org/verify/FR71XDTJUIGE",
     image:
       "./AICerts/Coursera Python for data science, AI and Development-1.jpg",
   },
@@ -40,7 +40,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "Intel - AI Essentials",
     date: "August 2025",
-    link: "#",
+    link: "https://coursera.org/verify/33E5FZSSO9YV",
     image: "./AICerts/Coursera Intel AI-1.jpg",
   },
   {
@@ -49,7 +49,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "DeepLearning.AI - AI For Everyone",
     date: "August 2025",
-    link: "#",
+    link: "https://coursera.org/verify/67IIZEU1WXFW",
     image: "./AICerts/Coursera AI for Everyone-1.jpg",
   },
   {
@@ -58,7 +58,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "Microsoft - Artificial Intelligence on Azure",
     date: "August 2025",
-    link: "#",
+    link: "https://coursera.org/verify/TIZXM10PMTDD",
     image: "./AICerts/Coursera AI on Microsoft Azure-1.jpg",
   },
   {
@@ -67,7 +67,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "AWS - Generative AI with LLMs",
     date: "August 2025",
-    link: "#",
+    link: "https://coursera.org/verify/3MS0FJL1X57F",
     image: "./AICerts/Coursera Generative AI with LLMs-1.jpg",
   },
   {
@@ -85,7 +85,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "Google - Introduction to Generative AI",
     date: "August 2025",
-    link: "#",
+    link: "https://coursera.org/verify/X741HIL0DGE7",
     image: "./AICerts/Coursera Intro to Responsible AI-1.jpg",
   },
   {
@@ -94,7 +94,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "JHU - Trustworthy AI: Managing Bias",
     date: "November 2025",
-    link: "#",
+    link: "https://coursera.org/verify/D3Z91SZ62MKH",
     image:
       "./AICerts/Coursera Trustworthy AI - Managing Bias - Ethics and Accountability-1.jpg",
   },
@@ -104,7 +104,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "ASU - Prompt Engineering with ChatGPT",
     date: "October 2025",
-    link: "#",
+    link: "https://coursera.org/verify/70RT3Q9H3HV1",
     image:
       "./AICerts/Coursera AI Foundations - Prompt Engineering with ChatGPT-1.jpg",
   },
@@ -114,7 +114,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "IBM - Building AI Powered Chatbots",
     date: "November 2025",
-    link: "#",
+    link: "https://coursera.org/verify/EXQI2WQ1DA02",
     image:
       "./AICerts/Coursera Building AI Powered Chatbots Without Programming-1.jpg",
   },
@@ -124,7 +124,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "Generative AI for Everyone",
     date: "November 2025",
-    link: "#",
+    link: "https://coursera.org/verify/1TX8S0RG27KK",
     image: "./AICerts/Coursera Generative AI for Everyone-1.jpg",
   },
   {
@@ -133,7 +133,7 @@ const myCertificates = [
     textcolor: "#000",
     title: "Google - Generative AI",
     date: "November 2025",
-    link: "#",
+    link: "https://coursera.org/verify/X741HIL0DGE7",
     image: "./AICerts/Coursera Google Cloud Gen AI-1.jpg",
   },
 ];
