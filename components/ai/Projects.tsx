@@ -5,6 +5,8 @@ import {
   useSpring,
   AnimatePresence,
 } from "framer-motion";
+import "../../public/fonts/broft.css";
+import "../../public/fonts/jetbrains.css";
 
 // 1. Define the shape of the data
 interface ProjectProps {
@@ -41,10 +43,10 @@ const ProjectCard = ({
       {/* The Glass Block */}
       <div className="absolute bottom-0 left-0 w-full backdrop-blur-md bg-black/40 border-t border-white/10 p-6 md:p-8 rounded-b-[15px]">
         <div className="flex flex-col items-start justify-end h-full">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 page-specific-font-br">
             {title}
           </h3>
-          <p className="text-gray-200 text-sm md:text-lg line-clamp-3 md:line-clamp-none">
+          <p className="text-gray-200 text-sm md:text-lg line-clamp-3 md:line-clamp-none page-specific-font">
             {description}
           </p>
         </div>
@@ -76,7 +78,7 @@ const ProjectCursor = ({ isHovering }: { isHovering: boolean }) => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-50 flex items-center justify-center bg-white text-black rounded-full mix-blend-difference"
+      className="fixed top-0 left-0 pointer-events-none z-50 flex items-center justify-center bg-white text-black rounded-full "
       style={{
         x: cursorXSpring,
         y: cursorYSpring,

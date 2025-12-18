@@ -1,24 +1,38 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu } from 'lucide-react';
-import gsap from 'gsap';
-import { NAV_ITEMS, SOCIALS } from '../constants';
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu } from "lucide-react";
+import gsap from "gsap";
+import { NAV_ITEMS, SOCIALS } from "../constants";
+import clsx from "clsx";
+import "../public/fonts/jetbrains.css";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const menuOverlayRef = useRef<HTMLDivElement>(null);
   const menuContentRef = useRef<HTMLDivElement>(null);
   const menuPreviewImgRef = useRef<HTMLDivElement>(null);
   const menuLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const socialLinkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
+  const isUiUxPage =
+    location.pathname === "/ui-ux" || location.pathname === "/data";
+
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 500);
+  };
 
   const videoEmbedUrl =
     "https://www.youtube.com/embed/h62aeDVJ9IA?autoplay=1&mute=1&loop=1&playlist=h62aeDVJ9IA&controls=0";
   useEffect(() => {
     // Close menu on route change
     if (isOpen) toggleMenu();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [location]);
 
   const toggleMenu = () => {
@@ -26,113 +40,161 @@ const Navbar: React.FC = () => {
     const ease = "power4.inOut";
 
     if (isOpen) {
-        // Close Menu Animation
-        document.body.style.overflow = 'unset';
-        const tl = gsap.timeline({
-            defaults: { ease: ease }
-        });
+      // Close Menu Animation
+      document.body.style.overflow = "unset";
+      const tl = gsap.timeline({
+        defaults: { ease: ease },
+      });
 
-        tl.to(menuLinkRefs.current, {
-            y: 120,
-            opacity: 0,
-            stagger: 0.05,
-            duration: 0.5,
-        });
+      tl.to(menuLinkRefs.current, {
+        y: 120,
+        opacity: 0,
+        stagger: 0.05,
+        duration: 0.5,
+      });
 
-        tl.to(socialLinkRefs.current, {
-            y: 120,
-            opacity: 0,
-            stagger: 0.05,
-            duration: 0.5,
-        }, "<");
-        
-        tl.to(menuPreviewImgRef.current, {
-            opacity: 0,
-            duration: 0.5
-        }, "<");
+      tl.to(
+        socialLinkRefs.current,
+        {
+          y: 120,
+          opacity: 0,
+          stagger: 0.05,
+          duration: 0.5,
+        },
+        "<"
+      );
 
-        tl.to(menuContentRef.current, {
-            x: -100,
-            y: -100,
-            scale: 1.5,
-            rotation: -15,
-            duration: 1,
-        });
+      tl.to(
+        menuPreviewImgRef.current,
+        {
+          opacity: 0,
+          duration: 0.5,
+        },
+        "<"
+      );
 
-        tl.to(menuOverlayRef.current, {
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-            duration: 1,
-            onComplete: () => {
-                setIsOpen(false);
-                if (menuOverlayRef.current) {
-                    menuOverlayRef.current.classList.remove('open');
-                }
+      tl.to(menuContentRef.current, {
+        x: -100,
+        y: -100,
+        scale: 1.5,
+        rotation: -15,
+        duration: 1,
+      });
+
+      tl.to(
+        menuOverlayRef.current,
+        {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+          duration: 1,
+          onComplete: () => {
+            setIsOpen(false);
+            if (menuOverlayRef.current) {
+              menuOverlayRef.current.classList.remove("open");
             }
-        }, "<");
-
+          },
+        },
+        "<"
+      );
     } else {
-        // Open Menu Animation
-        document.body.style.overflow = 'hidden';
-        setIsOpen(true);
-        if (menuOverlayRef.current) {
-            menuOverlayRef.current.classList.add('open');
-        }
+      // Open Menu Animation
+      document.body.style.overflow = "hidden";
+      setIsOpen(true);
+      if (menuOverlayRef.current) {
+        menuOverlayRef.current.classList.add("open");
+      }
 
-        const tl = gsap.timeline({
-            defaults: { ease: ease }
-        });
+      const tl = gsap.timeline({
+        defaults: { ease: ease },
+      });
 
-        tl.to(menuOverlayRef.current, {
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 1.25,
-        });
+      tl.to(menuOverlayRef.current, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1.25,
+      });
 
-        tl.to(menuContentRef.current, {
-            x: 0,
-            y: 0,
-            scale: 1,
-            rotation: 0,
-            duration: 1.25,
-        }, "<");
+      tl.to(
+        menuContentRef.current,
+        {
+          x: 0,
+          y: 0,
+          scale: 1,
+          rotation: 0,
+          duration: 1.25,
+        },
+        "<"
+      );
 
-        tl.to(menuPreviewImgRef.current, {
-            opacity: 1,
-            duration: 1,
-            delay: 0.5
-        }, "<");
+      tl.to(
+        menuPreviewImgRef.current,
+        {
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+        },
+        "<"
+      );
 
-        tl.to(menuLinkRefs.current, {
-            y: 0,
-            opacity: 1,
-            stagger: 0.1,
-            duration: 1,
-            delay: 0.5
-        }, "<");
+      tl.to(
+        menuLinkRefs.current,
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 1,
+          delay: 0.5,
+        },
+        "<"
+      );
 
-        tl.to(socialLinkRefs.current, {
-            y: 0,
-            opacity: 1,
-            stagger: 0.1,
-            duration: 1,
-            delay: 0.5
-        }, "<0.2");
+      tl.to(
+        socialLinkRefs.current,
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 1,
+          delay: 0.5,
+        },
+        "<0.2"
+      );
     }
   };
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 mix-blend-difference text-white bg-transparent">
+      <nav className="fixed top-0 w-full z-50 bg-transparent page-specific-font font-[Jetbrains]">
         <div className="w-full px-6 py-6 flex items-center justify-between">
           <div className="flex-shrink-0">
-            <Link to="/" className="font-bold text-xl tracking-tighter hover:opacity-70 transition-opacity">
+            <Link
+              to="/"
+              className={clsx(
+                "font-bold text-xl tracking-tighter",
+                !isUiUxPage
+                  ? scrolled
+                    ? "text-black"
+                    : "text-white"
+                  : scrolled
+                  ? "text-white"
+                  : "text-white"
+              )}
+            >
               JERESHANSINAN
             </Link>
           </div>
-          
+
           <div className="flex">
             <button
               onClick={toggleMenu}
-              className="nav-menu-btn z-50 inline-flex items-center justify-center w-10 h-10 rounded-full border border-white text-white hover:bg-white hover:text-black transition-colors focus:outline-none"
+              className={clsx(
+                "nav-menu-btn z-50 inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors focus:outline-none",
+                !isUiUxPage
+                  ? scrolled
+                    ? "bg-black text-white hover:bg-white hover:text-black"
+                    : "bg-white text-black hover:bg-black hover:text-white"
+                  : scrolled
+                  ? "bg-white text-black hover:bg-black hover:text-white"
+                  : "bg-white text-black hover:bg-black hover:text-white"
+              )}
               aria-label="Menu"
             >
               <Menu size={20} />
@@ -141,9 +203,12 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      <div ref={menuOverlayRef} className="menu-overlay px-4 md:px-12">
+      <div
+        ref={menuOverlayRef}
+        className="menu-overlay px-4 md:px-12 page-specific-font"
+      >
         <button
-          className="nav-menu-btn absolute top-6 right-6 z-50 w-10 h-10 rounded-full flex items-center justify-center border border-white text-white hover:bg-[#fef3c7] hover:text-black hover:border-[#fef3c7] transition-colors duration-300"
+          className="nav-menu-btn absolute top-6 right-6 z-50 w-10 h-10 rounded-full flex items-center justify-center border border-white text-white hover:bg-[#fff] hover:text-black hover:border-[#fff] transition-colors duration-300"
           onClick={toggleMenu}
         >
           ✕
@@ -162,7 +227,7 @@ const Navbar: React.FC = () => {
                   playsInline
                   className="w-full h-full object-cover"
                 >
-                  <source src='./menuhero.mkv' type="video/mp4" />
+                  <source src="./menuhero.mkv" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -172,26 +237,26 @@ const Navbar: React.FC = () => {
               <div className="menu-links">
                 {NAV_ITEMS.map((item, i) => (
                   <div key={i} className="link text-white">
-                    {item.path.startsWith('http') ? (
-                       <a
+                    {item.path.startsWith("http") ? (
+                      <a
                         ref={(el) => {
-                            menuLinkRefs.current[i] = el;
+                          menuLinkRefs.current[i] = el;
                         }}
                         href={item.path}
                         target="_blank"
                         rel="noopener noreferrer"
-                       >
-                         {item.label}
-                       </a>
+                      >
+                        {item.label}
+                      </a>
                     ) : (
-                        <Link
+                      <Link
                         ref={(el) => {
-                            menuLinkRefs.current[i] = el;
+                          menuLinkRefs.current[i] = el;
                         }}
                         to={item.path}
-                        >
+                      >
                         {item.label}
-                        </Link>
+                      </Link>
                     )}
                   </div>
                 ))}
@@ -199,10 +264,7 @@ const Navbar: React.FC = () => {
 
               <div className="menu-socials">
                 {SOCIALS.map((item, i) => (
-                  <div
-                    key={item.platform}
-                    className="social text-white font-mono"
-                  >
+                  <div key={item.platform} className="social text-white">
                     <a
                       ref={(el) => {
                         socialLinkRefs.current[i] = el;
@@ -219,7 +281,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <div className="menu-footer font-mono">
+          <div className="menu-footer">
             <div className="col-lg text-white hidden md:flex">
               <Link to="/">My Portfolio</Link>
             </div>

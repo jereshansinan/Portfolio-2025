@@ -5,7 +5,6 @@ const Loader: React.FC = () => {
   const counts = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Custom easing replacement since CustomEase is not available in basic imports
     const ease = "power4.inOut"; 
 
     const tl = gsap.timeline({
@@ -29,7 +28,7 @@ const Loader: React.FC = () => {
         index * 1
       );
 
-      if (index < counts.current.length - 1 || index === counts.current.length - 1) { // Adjusted logic
+      if (index < counts.current.length - 1 || index === counts.current.length - 1) {
         tl.to(
           digits,
           {
@@ -56,7 +55,7 @@ const Loader: React.FC = () => {
       "<"
     );
 
-    tl.to(".divider", {
+    /*tl.to(".divider", {
       scaleY: "100%",
       duration: 0.6,
       onComplete: () => {
@@ -70,7 +69,7 @@ const Loader: React.FC = () => {
       onComplete: () => {
         gsap.to(".divider2", { opacity: 0, duration: 0.4, delay: 0.3 });
       },
-    });
+    });*/
 
     tl.to("#word-1 h1", {
       y: "100%",

@@ -4,6 +4,7 @@ import Certificates from "../components/Certificates";
 import ProjectRow from "../components/programming/ProjectRow";
 import Specialising from "../components/programming/Specialising";
 import Scene3D from "../components/Scene3D";
+import "../public/fonts/jetbrains.css";
 
 const background = [
   {
@@ -34,7 +35,7 @@ const myCertificates = [
 
 export default function Programming() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen font-[Jetbrains] page-specific-font">
       {/* Hero Section with 3D Scene */}
       <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-16 md:py-24 relative bg-slate-900 overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
@@ -42,21 +43,18 @@ export default function Programming() {
         </div>
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">
-          <h1 className="text-4xl md:text-6xl text-white leading-tight font-mono font-bold tracking-tighter">
+          <h1 className="text-4xl md:text-6xl text-white leading-tight font-bold tracking-tighter">
             Programming
           </h1>
-          <p className="mt-4 text-gray-300 font-mono text-lg">
-            Full Stack Engineering & Architecture
-          </p>
         </div>
       </section>
 
       <Specialising />
 
-      <section className="w-full border-b border-gray-300 bg-white">
+      <section className="w-full border-b border-gray-300 bg-white page-specific-font">
         <div className="min-h-[200px] grid grid-cols-1 md:grid-cols-3">
           <div className="flex items-center justify-start p-8 text-left border-b md:border-b-0 md:border-r border-gray-300 col-span-1 md:col-span-1">
-            <h2 className="text-4xl md:text-7xl font-mono text-black font-bold">
+            <h2 className="text-4xl md:text-7xl text-black font-bold">
               PROJECTS
             </h2>
           </div>
@@ -66,7 +64,7 @@ export default function Programming() {
           <div className="p-6 flex flex-col justify-end items-end col-span-1">
             <div className="p-[1px] rounded-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md hover:shadow-lg transition-shadow">
               <Link to="/programming/projects">
-                <button className="bg-white text-black rounded-[9px] px-6 py-2 text-xl font-mono font-bold hover:bg-gray-50 transition-colors">
+                <button className="bg-white text-black rounded-[9px] px-6 py-2 text-xl hover:bg-black hover:text-white transition-colors">
                   View All
                 </button>
               </Link>
@@ -100,7 +98,7 @@ export default function Programming() {
       </div>
 
       <section className="pt-20 relative w-full bg-white">
-        <h2 className="text-4xl text-black md:text-7xl font-semibold font-mono pb-20 px-8 border-b border-gray-300">
+        <h2 className="text-4xl text-black md:text-7xl font-semibold pb-20 px-8 border-b border-gray-300">
           CERTIFICATIONS
         </h2>
       </section>

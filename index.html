@@ -23,18 +23,17 @@
         font-style: normal;
       }
 
+      @font-face {
+        font-family: 'Jetbrains';
+        src: url('../public/fonts/Jetbrains.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
       body {
-        font-family: 'JetBrains Mono', monospace;
         background-color: #ffffff;
         color: #0f172a;
-      }
-
-      .font-valve {
-        font-family: 'PP Valve', 'JetBrains Mono', monospace;
-      }
-
-      .font-broft {
-        font-family: 'Broft', 'JetBrains Mono', monospace;
       }
       
       ::-webkit-scrollbar {
@@ -404,6 +403,13 @@
         transform: translateY(120%);
         opacity: 0; /* Initally hidden */
       }
+
+      @media (max-width: 768px) {
+        .menu-items .col-lg {
+        display: none;
+        }
+      }
+
     </style>
   <script type="importmap">
 {

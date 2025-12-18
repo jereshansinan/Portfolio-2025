@@ -16,21 +16,21 @@ const ProjectRow: React.FC<ProjectsProps> = ({
   stack,
 }) => {
   return (
-    <div className="w-full flex flex-col md:flex-row items-stretch min-h-[400px] font-sans gap-0 border-b border-gray-300 bg-white">
+    <div className="w-full flex flex-col md:flex-row items-stretch min-h-[400px] gap-0 border-b border-gray-300 bg-white">
       {/* Column 1 */}
       <div className="flex-1 pl-2 flex flex-col justify-center py-8 md:py-0">
         <div className="flex flex-col md:flex-col md:items-start pl-4 md:pl-8">
           <div className="inline-flex items-center">
             <div className="rounded-[10px] p-[1px] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
-              <div className="bg-white rounded-md w-10 border md:w-12 aspect-square flex items-center justify-center font-bold font-mono text-black">
+              <div className="bg-white rounded-md w-10 border md:w-12 aspect-square flex items-center justify-center font-bold text-black">
                 {number}
               </div>
             </div>
           </div>
 
           <div className="mt-8 md:mt-16 text-left">
-            <h3 className="m-0 text-3xl md:text-5xl font-medium font-mono text-black">{title}</h3>
-            <p className="mt-5 text-lg text-gray-600 font-mono pr-4">{description}</p>
+            <h3 className="m-0 text-3xl md:text-5xl font-medium text-black">{title}</h3>
+            <p className="mt-5 text-lg text-gray-600 pr-4">{description}</p>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ const ProjectRow: React.FC<ProjectsProps> = ({
 
       {/* Column 3 */}
       <div className="flex-1 p-0 flex flex-col justify-end border-t md:border-t-0 border-gray-200">
-        <div className="w-full font-mono text-lg md:text-xl text-black">
+        <div className="w-full text-lg md:text-xl text-black">
           {stack.map((item, idx) => (
             <div
               key={idx}

@@ -1,0 +1,11 @@
+@font-face {
+        font-family: 'PPValve';
+        src: url('ppvalve.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .page-specific-font-pp {
+  font-family: 'PPValve', sans-serif;
+}

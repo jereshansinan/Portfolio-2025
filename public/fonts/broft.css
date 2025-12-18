@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Broft";
+  src: url("ttcarvist.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.page-specific-font-br {
+  font-family: "Broft", sans-serif;
+}

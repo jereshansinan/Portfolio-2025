@@ -12,16 +12,18 @@ import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import Loader from './components/Loader';
 import LenisWrapper from './components/Lenis';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
     <LenisWrapper>
-      <Loader />
+      {/* <Loader /> */}
       <Router>
         <Navbar />
         {/* Removed bg-white from here to allow transparent backgrounds in Home */}
         <div className="flex flex-col min-h-screen text-slate-900 selection:bg-black selection:text-white">
           <main className="flex-grow">
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
               

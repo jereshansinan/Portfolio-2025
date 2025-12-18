@@ -59,7 +59,7 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
       <div className="grid grid-cols-1 lg:grid-cols-3">
         {reverse ? (
           <>
-            <div className="col-span-2 w-full font-mono flex items-center overflow-hidden py-16 border-r border-gray-300 order-2 lg:order-1">
+            <div className="col-span-2 w-full flex items-center overflow-hidden py-16 border-r border-gray-300 order-2 lg:order-1">
               <div
                 className="flex items-start"
                 style={{
@@ -80,7 +80,7 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
 
             {/* 2. Title Section (Right) */}
             <div className="col-span-1 p-8 flex items-center justify-center lg:justify-start order-1 lg:order-2 border-b lg:border-b-0 border-gray-300">
-              <h3 className="text-3xl md:text-4xl font-semibold text-black font-mono leading-tight">
+              <h3 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
                 {title}
               </h3>
             </div>
@@ -88,13 +88,13 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
         ) : (
           <>
             <div className="col-span-1 p-8 border-r border-gray-300 flex items-center border-b lg:border-b-0">
-              <h3 className="text-3xl md:text-4xl font-semibold text-black font-mono leading-tight">
+              <h3 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
                 {title}
               </h3>
             </div>
 
             {/* 2. Tools Section (Right) */}
-            <div className="col-span-2 w-full font-mono flex items-center overflow-hidden py-16">
+            <div className="col-span-2 w-full flex items-center overflow-hidden py-16">
               <div
                 className="flex items-start"
                 style={{
@@ -125,7 +125,7 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
 
 const Specialising = () => {
   return (
-    <div aria-hidden={false} className="relative bg-transparent w-full">
+    <div aria-hidden={false} className="relative bg-transparent w-full ">
       {/* Row 1: Languages (Standard Layout) */}
       <SkillRow items={languages} title="Languages & Frameworks" />
 
