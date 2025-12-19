@@ -1,23 +1,23 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Programming from './pages/Programming';
-import ProgrammingProjects from './pages/ProgrammingProjects';
-import UIUX from './pages/UIUX';
-import AI from './pages/AI';
-import Skills from './pages/Skills';
-import Contact from './pages/Contact';
-import Loader from './components/Loader';
-import LenisWrapper from './components/Lenis';
-import ScrollToTop from './components/ScrollToTop';
+import React from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Programming from "./pages/Programming";
+import ProgrammingProjects from "./pages/ProgrammingProjects";
+import UIUX from "./pages/UIUX";
+import AI from "./pages/AI";
+import Skills from "./pages/Skills";
+import Contact from "./pages/Contact";
+import Loader from "./components/Loader";
+import LenisWrapper from "./components/Lenis";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => {
   return (
     <LenisWrapper>
-      {/* <Loader /> */}
+      <Loader />
       <Router>
         <Navbar />
         {/* Removed bg-white from here to allow transparent backgrounds in Home */}
@@ -26,13 +26,16 @@ const App: React.FC = () => {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
-              
+
               {/* Specialized Pages */}
               <Route path="/programming" element={<Programming />} />
-              <Route path="/programming/projects" element={<ProgrammingProjects />} />
+              <Route
+                path="/programming/projects"
+                element={<ProgrammingProjects />}
+              />
               <Route path="/ui-ux" element={<UIUX />} />
               <Route path="/ai" element={<AI />} />
-              
+
               {/* Generic Pages */}
               <Route path="/3d-design" element={<Projects />} />
               <Route path="/data" element={<Skills />} />

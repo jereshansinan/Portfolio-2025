@@ -191,7 +191,7 @@ const Home: React.FC = () => {
               </h2>
               <div className="flex flex-wrap gap-4 mt-auto">
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/jereshansinan/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:underline"
@@ -206,7 +206,7 @@ const Home: React.FC = () => {
                   LinkedIn
                 </a>
                 <a
-                  href="https://github.com/yourprofile"
+                  href="https://github.com/jereshansinan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:underline"
@@ -221,7 +221,7 @@ const Home: React.FC = () => {
                   GitHub
                 </a>
                 <a
-                  href="/cv.pdf"
+                  href="/cv/Jereshan Sinan AI CV.pdf"
                   download
                   className="flex items-center gap-2 hover:underline"
                 >
