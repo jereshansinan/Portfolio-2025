@@ -201,7 +201,7 @@ const Home: React.FC = () => {
               </h2>
               <div className="flex flex-wrap gap-4 mt-auto">
                 <a
-                  href="https://www.linkedin.com/in/jereshansinan/"
+                  href="https://za.linkedin.com/in/jereshansinan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:underline"

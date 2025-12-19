@@ -81,7 +81,7 @@ export const SOCIALS: SocialLink[] = [
   { platform: "GitHub", url: "https://github.com/jereshansinan", icon: Github },
   {
     platform: "LinkedIn",
-    url: "https://www.linkedin.com/in/jereshansinan/",
+    url: "https://za.linkedin.com/in/jereshansinan",
     icon: Linkedin,
   },
   {
