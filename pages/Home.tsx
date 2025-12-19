@@ -113,7 +113,7 @@ const Home: React.FC = () => {
       {/* Main Content Cards */}
       {!showOverlay && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 py-8 gap-8 overflow-y-auto bg-white/70 backdrop-blur-xs page-specific-font">
-          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 w-full min-h-[800px] md:h-[90%] border border-white/30">
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 w-full min-h-full md:h-[90%] border border-white/30">
             {/* 1. Large Profile Image Section (Top Left - Spans 2x2) */}
             <div className="md:col-span-2 md:row-span-2 relative group overflow-hidden border-b border-white/30 md:border-r bg-white md:bg-transparent">
               <div className="absolute bottom-0 left-0 p-8 z-10">
@@ -127,7 +127,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* 2. Professional Biography (Top Right - Spans 2x1) */}
-            <div className="md:col-span-2 md:row-span-2 p-6 md:p-8 border-b border-white/30 flex flex-col justify-between transition-colors duration-300 bg-white md:bg-transparent text-gray-900 md:text-gray-800 md:hover:bg-white md:hover:text-black group">
+            <div className="md:col-span-2 md:row-span-3 p-6 md:p-8 border-b border-white/30 flex flex-col justify-between transition-colors duration-300 bg-white md:bg-transparent text-gray-900 md:text-gray-800 md:hover:bg-white md:hover:text-black group">
               <h2 className="text-xl font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
                 Professional Biography
               </h2>
