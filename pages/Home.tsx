@@ -115,7 +115,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 py-8 gap-8 overflow-y-auto bg-white/70 backdrop-blur-xs page-specific-font">
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 w-full min-h-full md:h-[90%] border border-white/30">
             {/* 1. Large Profile Image Section (Top Left - Spans 2x2) */}
-            <div className="md:col-span-2 md:row-span-2 relative group overflow-hidden border-b border-white/30 md:border-r bg-white md:bg-transparent">
+            <div className="md:col-span-2 md:row-span-1 relative group overflow-hidden border-b border-white/30 md:border-r bg-white md:bg-transparent">
               <div className="absolute bottom-0 left-0 p-8 z-10">
                 <h1 className="text-4xl md:text-5xl font-bold text-black mb-2 tracking-tighter">
                   Jereshan Sinan
@@ -149,14 +149,24 @@ const Home: React.FC = () => {
             </div>
 
             {/* 3. Career Objectives (Middle Right - Spans 1x1) */}
-            <div className="md:col-span-2 p-6 md:p-8 border-b border-white/30 md:border-r flex flex-col justify-between transition-colors duration-300 bg-white md:bg-transparent text-gray-900 md:text-gray-800 md:hover:bg-white md:hover:text-black group">
+            <div className="md:col-span-2 md:row-span-2 p-6 md:p-8 border-b border-white/30 md:border-r flex flex-col justify-between transition-colors duration-300 bg-white md:bg-transparent text-gray-900 md:text-gray-800 md:hover:bg-white md:hover:text-black group">
               <h2 className="text-xl font-semibold opacity-70 group-hover:opacity-100 transition-opacity">
                 Objectives
               </h2>
               <ul className="list-disc list-inside text-sm md:text-lg space-y-2 page-specific-font">
-                <li>Lead innovative web projects</li>
-                <li>Mentor and collaborate</li>
-                <li>Open-source contribution</li>
+                <li>Architect scalable Data Engineering pipelines</li>
+                <li>
+                  Advance academic and technical mastery by pursuing a Master’s
+                  degree in Computer Science.
+                </li>
+                <li>
+                  Lead cross-functional teams to bridge the gap between creative
+                  design and robust engineering.
+                </li>
+                <li>
+                  Drive industry innovation through active open-source
+                  contribution and mentorship.
+                </li>
               </ul>
             </div>
 

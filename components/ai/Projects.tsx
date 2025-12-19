@@ -29,7 +29,7 @@ const ProjectCard = ({
   onMouseLeave,
 }: ProjectProps & { onMouseEnter: () => void; onMouseLeave: () => void }) => {
   return (
-    <div className="block relative w-full h-[60vh] md:h-[80vh] rounded-[15px] overflow-hidden group font-mono">
+    <div className="block relative w-full h-[60vh] md:h-[80vh] rounded-[15px] overflow-hidden group page-specific-font">
       <a
         href={link}
         target="_blank"
@@ -143,7 +143,7 @@ const AIProjects = ({ items }: AIProjectsProps) => {
       {items.map((project, index) => (
         <div
           key={index}
-          className="sticky top-0 h-screen w-full flex items-center justify-center bg-white border-t border-gray-100 overflow-hidden px-4 md:px-12"
+          className="top-0 h-screen w-full flex items-center justify-center bg-white border-t border-gray-100 overflow-hidden px-4 md:px-12"
           style={{
             zIndex: index + 1,
           }}
@@ -158,6 +158,7 @@ const AIProjects = ({ items }: AIProjectsProps) => {
               image={project.image}
               link={project.link}
               title={project.title}
+              doclink={project.doclink}
               onMouseEnter={() => setIsHoveringProject(true)}
               onMouseLeave={() => setIsHoveringProject(false)}
             />
