@@ -4,6 +4,7 @@ import Certificates from "../components/Certificates";
 import Scene3D from "../components/Scene3D";
 import "../public/fonts/broft.css";
 import "../public/fonts/jetbrains.css";
+import Specialising from "../components/ai/Specialising";
 
 const myCertificates = [
   {
@@ -225,6 +226,8 @@ export default function AIPage() {
           </h1>
         </div>
       </section>
+
+      <Specialising />
 
       <AIProjects items={myProjects} />
 
