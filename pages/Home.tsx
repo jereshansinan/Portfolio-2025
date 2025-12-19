@@ -9,14 +9,12 @@ const CustomCursor = () => {
   const [isMenuHovered, setIsMenuHovered] = useState(false);
 
   useEffect(() => {
-    // Initial set to center the cursor div on the coordinates
     if (cursorRef.current) {
       gsap.set(cursorRef.current, { xPercent: -50, yPercent: -50 });
     }
 
     const moveCursor = (e: MouseEvent) => {
       if (cursorRef.current) {
-        // Increased duration to 0.5s for a smoother, delayed feel
         gsap.to(cursorRef.current, {
           x: e.clientX,
           y: e.clientY,
@@ -50,7 +48,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 z-50 pointer-events-none mix-blend-difference"
+      className="fixed top-0 left-0 z-50 pointer-events-none"
     >
       <motion.div
         animate={{
@@ -58,10 +56,10 @@ const CustomCursor = () => {
           height: isMenuHovered ? 24 : 96,
         }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
-        className="bg-white rounded-full flex items-center justify-center overflow-hidden"
+        className="bg-black rounded-full flex items-center justify-center overflow-hidden"
       >
         {!isMenuHovered && (
-          <span className="text-black page-specific-font font-bold text-sm tracking-widest animate-pulse">
+          <span className="text-white page-specific-font font-bold text-sm tracking-widest animate-pulse">
             ENTER
           </span>
         )}
@@ -74,7 +72,7 @@ const Home: React.FC = () => {
   const [showOverlay, setShowOverlay] = useState(true);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#1e293b]">
+    <div className="relative w-full h-screen overflow-hidden bg-black">
       {/* Fixed 3D Scene Background - Always present but revealed via cutout or after transition */}
       <div className="fixed inset-0 z-0">
         <Scene3D background="./programming.mp4" />
@@ -92,19 +90,26 @@ const Home: React.FC = () => {
               clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
               transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
             }}
+            onClick={() => setShowOverlay(false)}
           >
-            <div
-              className="absolute inset-0 bg-white mix-blend-screen flex items-center justify-center w-full h-full cursor-none page-specific-font"
-              onClick={() => setShowOverlay(false)}
-            >
-              <h1 className="text-[17vw] font-bold text-black tracking-tighter leading-[0.85] text-center select-none w-full break-all sm:break-normal pointer-events-none">
+            {/* Video layer - full screen, behind everything */}
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src="./programming.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+
+            {/* White mask layer with text cutout using mix-blend-screen */}
+            <div className="relative flex items-center justify-center w-full h-full mix-blend-screen bg-white page-specific-font">
+              <h1 className="text-[17vw] font-bold text-black tracking-tighter leading-[0.85] text-center select-none pointer-events-none">
                 JERESHAN
                 <br />
                 SINAN
               </h1>
             </div>
-
-            {/* Custom Cursor sits on top of the blend layer (z-50 in component) */}
             <CustomCursor />
           </motion.div>
         )}

@@ -168,8 +168,10 @@ const Navbar: React.FC = () => {
             <Link
               to="/"
               className={clsx(
-                "font-bold text-xl tracking-tighter",
-                !isUiUxPage
+                "font-bold text-xl tracking-tighter transition-colors duration-300",
+                location.pathname === "/"
+                  ? "text-black"
+                  : !isUiUxPage
                   ? scrolled
                     ? "text-black"
                     : "text-white"
@@ -187,7 +189,9 @@ const Navbar: React.FC = () => {
               onClick={toggleMenu}
               className={clsx(
                 "nav-menu-btn z-50 inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors focus:outline-none",
-                !isUiUxPage
+                location.pathname === "/"
+                  ? "text-white bg-black"
+                  : !isUiUxPage
                   ? scrolled
                     ? "bg-black text-white hover:bg-white hover:text-black"
                     : "bg-white text-black hover:bg-black hover:text-white"
