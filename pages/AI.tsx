@@ -206,7 +206,13 @@ const myProjects = [
 
 export default function AIPage() {
   return (
-    <div className="bg-white min-h-screen page-specific-font-br">
+    <div
+      className="min-h-screen page-specific-font-br"
+      style={{
+        background:
+          "linear-gradient(to bottom right, #A4A4A4, #CCCCCC, #989898)",
+      }}
+    >
       {/* Hero Section with 3D Scene */}
       <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative bg-black overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
@@ -222,7 +228,7 @@ export default function AIPage() {
 
       <AIProjects items={myProjects} />
 
-      <section className="pt-20 relative w-full bg-white">
+      <section className="pt-20 relative w-full bg-transparent">
         <h2 className="text-4xl text-black md:text-7xl font-semibold pb-20 px-8 border-b border-gray-300 page-specific-font-br">
           CERTIFICATIONS
         </h2>
