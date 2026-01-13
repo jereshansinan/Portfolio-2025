@@ -78,7 +78,7 @@ export default function UIUX() {
       {/* Hero Section with 3D Scene - Excluded from Mask Effect */}
       <section className="z-20 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative overflow-hidden h-[60vh] md:h-[100vh] page-specific-font-pp">
         <div className="absolute inset-0 z-0">
-          <Scene3D background="./5.png" />
+          <Scene3D background="https://i.imgur.com/vlDzGcx.jpg" />
         </div>
 
         <div className="inline-block max-w-4xl text-center relative z-10 px-4">

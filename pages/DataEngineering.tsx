@@ -22,7 +22,7 @@ export default function DataEngineering() {
       {/* Hero Section with 3D Scene */}
       <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-8 md:py-10 relative overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
-          <Scene3D background="./3.png" />
+          <Scene3D background="https://i.imgur.com/pinoSFS.jpg" />
         </div>
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">

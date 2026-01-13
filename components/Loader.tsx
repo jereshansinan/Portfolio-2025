@@ -5,10 +5,15 @@ const Loader: React.FC = () => {
   const counts = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const ease = "power4.inOut"; 
+    const ease = "power4.inOut";
+
+    // Adjusted speeds
+    const animDuration = 1; // Was 1
+    const animStagger = 0.075; // Was 0.075
+    const stepInterval = 0.9; // Was 1 (Controls speed between count numbers)
 
     const tl = gsap.timeline({
-      delay: 0.3,
+      delay: 0.1, // Reduced initial delay
       defaults: {
         ease: ease,
       },
@@ -18,80 +23,70 @@ const Loader: React.FC = () => {
       if (!count) return;
       const digits = count.querySelectorAll(".digit h1");
 
+      // Reveal digits
       tl.to(
         digits,
         {
           y: "0%",
-          duration: 1,
-          stagger: 0.075,
+          duration: animDuration,
+          stagger: animStagger,
         },
-        index * 1
+        index * stepInterval // Tighter timing based on new interval
       );
 
-      if (index < counts.current.length - 1 || index === counts.current.length - 1) {
+      // Hide digits (Move up)
+      if (
+        index < counts.current.length - 1 ||
+        index === counts.current.length - 1
+      ) {
         tl.to(
           digits,
           {
             y: "100%",
-            duration: 1,
-            stagger: 0.075,
+            duration: animDuration,
+            stagger: animStagger,
           },
-          index * 1 + 1
+          // Start hide animation slightly before the next one starts for overlap
+          index * stepInterval + (animDuration - 0.1)
         );
       }
     });
 
     tl.to(".spinner", {
       opacity: 0,
-      duration: 0.3,
+      duration: 0.2, // Faster fade out
     });
 
     tl.to(
       ".word h1",
       {
         y: "0%",
-        duration: 1,
+        duration: 0.6, // Was 1
       },
-      "<"
+      "<" // Starts at same time as spinner fade
     );
-
-    /*tl.to(".divider", {
-      scaleY: "100%",
-      duration: 0.6,
-      onComplete: () => {
-        gsap.to(".divider", { opacity: 0, duration: 0.4, delay: 0.3 });
-      },
-    });
-
-    tl.to(".divider2", {
-      scaleY: "100%",
-      duration: 0.6,
-      onComplete: () => {
-        gsap.to(".divider2", { opacity: 0, duration: 0.4, delay: 0.3 });
-      },
-    });*/
 
     tl.to("#word-1 h1", {
       y: "100%",
-      duration: 1,
-      delay: 0.3,
+      duration: 0.6, // Was 1
+      delay: 0, // Removed delay
     });
 
     tl.to(
       "#word-2 h1",
       {
         y: "-110%",
-        duration: 1,
-        delay: 0.3,
+        duration: 0.6, // Was 1
+        delay: 0, // Removed delay
       },
-      "<"
+      "<" // Syncs perfectly with word-1
     );
 
     tl.to(".blockb", {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      duration: 1,
-      stagger: 0.1,
-      delay: 0.75,
+      duration: 0.8, // Was 1
+      stagger: 0.05, // Faster stagger
+      delay: 0, // Removed big delay
       onComplete: () => {
         document.querySelector(".loader")?.classList.add("hidden");
       },

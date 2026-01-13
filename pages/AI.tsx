@@ -217,7 +217,7 @@ export default function AIPage() {
       {/* Hero Section with 3D Scene */}
       <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative bg-black overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
-          <Scene3D background="./2.png" />
+          <Scene3D background="https://i.imgur.com/GnURRcW.jpg" />
         </div>
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">

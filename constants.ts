@@ -5,7 +5,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Home", path: "/" },
   { label: "Programming", path: "/programming" },
   { label: "UI/UX", path: "/ui-ux" },
-  { label: "3D Design", path: "https://jereshansinan.netlify.app/" },
+  { label: "3D Design", path: "/3d-design" },
   { label: "AI", path: "/ai" },
   { label: "Data Engineering", path: "/data" },
 ];

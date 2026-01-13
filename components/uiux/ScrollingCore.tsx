@@ -7,19 +7,19 @@ const ScrollingCore: React.FC = () => {
       id: 1,
       label: "Web & Mobile",
       title: "INTERFACES",
-      img: "./ui1.png",
+      img: "https://i.imgur.com/oJx3Uv1.png",
     },
     {
       id: 2,
       label: "Brand & Print",
       title: "IDENTITY",
-      img: "./ui2.png",
+      img: "https://i.imgur.com/66GAeCt.png",
     },
     {
       id: 3,
       label: "Code & Systems",
       title: "SYSTEMS",
-      img: "./ui3.png",
+      img: "https://i.imgur.com/KTUIQEb.png",
     },
   ];
 
@@ -49,7 +49,7 @@ const ScrollingCore: React.FC = () => {
               className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] leading-[0.9] font-black text-white/10 md:text-white whitespace-nowrap pointer-events-none select-none z-0 page-specific-font-pp ${
                 it.id === 2
                   ? "text-[20vw] md:text-[clamp(60px,20vw,270px)]"
-                  : "text-[15vw] md:text-[clamp(60px,20vw,200px)]" 
+                  : "text-[15vw] md:text-[clamp(60px,20vw,200px)]"
               }`}
             >
               {it.title}

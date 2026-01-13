@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Hebra";
+  src: url("HebraRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.page-specific-font-hebra {
+  font-family: "Hebra", sans-serif;
+}

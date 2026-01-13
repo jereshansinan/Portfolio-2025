@@ -39,7 +39,7 @@ export default function Programming() {
       {/* Hero Section with 3D Scene */}
       <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-16 md:py-24 relative bg-slate-900 overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
-          <Scene3D background="./programming.mp4" />
+          <Scene3D background="https://i.imgur.com/706eK9Z.mp4" />
         </div>
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">

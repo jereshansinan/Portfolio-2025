@@ -40,7 +40,6 @@ const Navbar: React.FC = () => {
     const ease = "power4.inOut";
 
     if (isOpen) {
-      // Close Menu Animation
       document.body.style.overflow = "unset";
       const tl = gsap.timeline({
         defaults: { ease: ease },
@@ -96,7 +95,6 @@ const Navbar: React.FC = () => {
         "<"
       );
     } else {
-      // Open Menu Animation
       document.body.style.overflow = "hidden";
       setIsOpen(true);
       if (menuOverlayRef.current) {
@@ -169,7 +167,7 @@ const Navbar: React.FC = () => {
               to="/"
               className={clsx(
                 "font-bold text-xl tracking-tighter transition-colors duration-300",
-                location.pathname === "/"
+                location.pathname === "/" || location.pathname === "/3d-design"
                   ? "text-black"
                   : !isUiUxPage
                   ? scrolled
@@ -190,14 +188,14 @@ const Navbar: React.FC = () => {
               className={clsx(
                 "nav-menu-btn z-50 inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors focus:outline-none",
                 location.pathname === "/"
-                  ? "text-white bg-black"
+                  ? "text-white bg-[#1D1D1B]"
                   : !isUiUxPage
                   ? scrolled
                     ? "bg-black text-white hover:bg-white hover:text-black"
-                    : "bg-white text-black hover:bg-black hover:text-white"
+                    : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
                   : scrolled
-                  ? "bg-white text-black hover:bg-black hover:text-white"
-                  : "bg-white text-black hover:bg-black hover:text-white"
+                  ? "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
+                  : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
               )}
               aria-label="Menu"
             >
@@ -231,7 +229,10 @@ const Navbar: React.FC = () => {
                   playsInline
                   className="w-full h-full object-cover"
                 >
-                  <source src="./menuhero.mkv" type="video/mp4" />
+                  <source
+                    src="https://i.imgur.com/mBp2hKK.mp4"
+                    type="video/mp4"
+                  />
                   Your browser does not support the video tag.
                 </video>
               </div>
