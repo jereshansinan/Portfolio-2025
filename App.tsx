@@ -20,7 +20,7 @@ import { AnimatePresence } from "framer-motion";
 const App: React.FC = () => {
   return (
     <LenisWrapper>
-      <Loader />
+      {/* <Loader /> */}
       <Router>
         <Navbar />
         {/* Removed bg-white from here to allow transparent backgrounds in Home */}
