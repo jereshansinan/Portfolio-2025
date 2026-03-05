@@ -73,7 +73,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Fixed 3D Scene Background - Always present but revealed via cutout or after transition */}
       <div className="fixed inset-0 z-0">
         <Scene3D background="https://i.imgur.com/706eK9Z.mp4" />
       </div>
@@ -92,7 +91,6 @@ const Home: React.FC = () => {
             }}
             onClick={() => setShowOverlay(false)}
           >
-            {/* Video layer - full screen, behind everything */}
             <video
               className="absolute inset-0 w-full h-full object-cover"
               src="https://i.imgur.com/706eK9Z.mp4"
@@ -102,8 +100,7 @@ const Home: React.FC = () => {
               playsInline
             />
 
-            {/* White mask layer with text cutout using mix-blend-screen */}
-            <div className="relative flex items-center justify-center w-full h-full mix-blend-screen bg-white page-specific-font">
+            <div className="relative flex items-center justify-center w-full h-full mix-blend-screen bg-white/90 backdrop-blur-md page-specific-font">
               <h1 className="text-[17vw] font-bold text-black tracking-tighter leading-[0.85] text-center select-none pointer-events-none">
                 JERESHAN
                 <br />
@@ -143,13 +140,11 @@ const Home: React.FC = () => {
                 UI/UX with technical discipline to build solutions that are not
                 only functional but exceptional to use. I don't just write code;
                 I solve problems. From streamlining complex customer management
-                processes to creating immersive digital brand experiences, I
-                leverage the power of AI to build smarter, faster, and more
-                efficient systems. My approach is holistic-blending the
-                precision of backend architecture with the creativity of
-                frontend design. I am driven by a passion to help people through
-                technology, creating digital environments that are secure,
-                intelligent, and impactful.
+                processes to creating immersive digital brand experiences. My
+                approach is blending the precision of backend architecture with
+                the creativity of frontend design. I am driven by a passion to
+                help people through technology, creating digital environments
+                that are secure, intelligent, and impactful.
               </p>
             </div>
 
