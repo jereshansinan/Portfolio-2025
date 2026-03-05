@@ -12,7 +12,7 @@ const ThreeDDesign: React.FC = () => {
           <ThreeDProjectsTransition to="/3d-design/3dprojects/Architecture">
             <DataGrid
               size="big"
-              src="https://i.imgur.com/A9DuZjx.gif"
+              src="https://res.cloudinary.com/dxmnledfa/video/upload/v1772691773/hero_navbar_lfxngt.mp4"
               Title="3D Architecture"
               heading="Fiction and non-Fiction"
               date="2022"

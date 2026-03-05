@@ -5,28 +5,104 @@ import React from "react";
 // ----------------------------------------------------------------------
 
 const languages = [
-  { name: ".NET", years: "3 years", src: "/NET.svg" },
-  { name: "C#", years: "3 years", src: "/csharp.svg" },
-  { name: "Java", years: "5 years", src: "/java.svg" },
-  { name: "Kotlin", years: "2 years", src: "/kotlin.svg" },
-  { name: "Next.js", years: "3 years", src: "/nextjs.svg" },
-  { name: "Python", years: "1 year", src: "/python.svg" },
-  { name: "React", years: "3 years", src: "/react.svg" },
-  { name: "TypeScript", years: "2 years", src: "/typeScript.svg" },
+  {
+    name: ".NET",
+    years: "3 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692281/NET_lckivp.svg",
+  },
+  {
+    name: "C#",
+    years: "3 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692283/csharp_cfukdx.svg",
+  },
+  {
+    name: "Java",
+    years: "5 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692281/java_avpmbl.svg",
+  },
+  {
+    name: "Kotlin",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692281/kotlin_dlqmgc.svg",
+  },
+  {
+    name: "Next.js",
+    years: "3 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692280/nextjs_kfdcnh.svg",
+  },
+  {
+    name: "Python",
+    years: "1 year",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692279/python_arrany.svg",
+  },
+  {
+    name: "React",
+    years: "3 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692279/react_pfd5mk.svg",
+  },
+  {
+    name: "TypeScript",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692288/typeScript_cp84vs.svg",
+  },
 ];
 
 const devopsAndTools = [
-  { name: "Android Studio", years: "3 years", src: "/android.svg" },
-  { name: "Azure", years: "3 years", src: "/azure.svg" },
-  { name: "CircleCI", years: "2 years", src: "/circleci.svg" },
-  { name: "Clerk", years: "2 years", src: "/clerk.svg" },
-  { name: "Git", years: "10 years", src: "/git.svg" },
-  { name: "Github", years: "4 years", src: "/github.svg" },
-  { name: "Postman", years: "2 years", src: "/postman.svg" },
-  { name: "Prisma", years: "3 years", src: "/prisma.svg" },
-  { name: "Snyk", years: "2 years", src: "/snyk.svg" },
-  { name: "Sonarqube", years: "2 years", src: "/sonarqube.svg" },
-  { name: "Vercel", years: "2 years", src: "/vercel.svg" },
+  {
+    name: "Android Studio",
+    years: "3 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692285/android_c6wuja.svg",
+  },
+  {
+    name: "Azure",
+    years: "3 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692284/azure_kpiwwm.svg",
+  },
+  {
+    name: "CircleCI",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692283/circleci_lb0vxy.svg",
+  },
+  {
+    name: "Clerk",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692283/clerk_imoz6s.svg",
+  },
+  {
+    name: "Git",
+    years: "10 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692282/git_osdx6v.svg",
+  },
+  {
+    name: "Github",
+    years: "4 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692282/github_zfkvyw.svg",
+  },
+  {
+    name: "Postman",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692280/postman_x2n4zc.svg",
+  },
+  {
+    name: "Prisma",
+    years: "3 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692279/prisma_y3tiif.svg",
+  },
+  {
+    name: "Snyk",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692279/snyk_zpohbb.svg",
+  },
+  {
+    name: "Sonarqube",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692288/sonarqube_udxzpf.svg",
+  },
+  {
+    name: "Vercel",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692285/vercel_xrqhlk.svg",
+  },
 ];
 
 // ----------------------------------------------------------------------
@@ -34,14 +110,14 @@ const devopsAndTools = [
 // ----------------------------------------------------------------------
 
 const SkillItem = ({ item }: { item: (typeof languages)[0] }) => (
-  <div className="flex-shrink-0 min-w-[200px] flex flex-col items-start border-r border-gray-300 mr-12 pl-4">
+  <div className="shrink-0 min-w-[200px] flex flex-col items-start border-r border-gray-300 mr-12 pl-4">
     <img
       alt={`${item.name} logo`}
       className="object-contain w-[100px] h-[100px]"
       src={item.src}
     />
     <span className="mt-4 text-black text-xl font-bold">{item.name}</span>
-    <span className="mt-1 font-semibold bg-gradient-to-r from-[#FF3F3F] via-[#28FFB4] to-[#8833FF] bg-clip-text text-transparent">
+    <span className="mt-1 font-semibold bg-linear-to-r from-[#FF3F3F] via-[#28FFB4] to-[#8833FF] bg-clip-text text-transparent">
       {item.years}
     </span>
   </div>

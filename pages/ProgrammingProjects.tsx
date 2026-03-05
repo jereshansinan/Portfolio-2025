@@ -8,7 +8,7 @@ export default function ProgrammingProjects() {
       {/* Hero Section with 3D Scene */}
       <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-16 md:py-24 relative bg-slate-900 overflow-hidden h-[60vh] md:h-[100vh]">
         <div className="absolute inset-0 z-0">
-          <Scene3D background="./programming.mp4" />
+          <Scene3D background="https://res.cloudinary.com/dxmnledfa/video/upload/v1772691980/home_bg_qlxvyy.mp4" />
         </div>
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">
@@ -29,21 +29,21 @@ export default function ProgrammingProjects() {
       <div className="flex flex-col w-full">
         <ProjectRow
           description="A centralized fitness & coaching platform replacing third-party tools with custom dashboards for clients and admins."
-          image="./molende.png"
+          image="https://res.cloudinary.com/dxmnledfa/image/upload/v1772693493/molende_ajnbrp.png"
           number={1}
           stack={["React", "Next.js", "Supabase", "Clerk"]}
           title="Molende Sports"
         />
         <ProjectRow
           description="A full CRM application handling task management, customer tracking, and REST API integrations."
-          image="./vucadigital.png"
+          image="https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png"
           number={2}
           stack={["Android Studio", "Firebase", "Supabase", "CI/CD"]}
           title="VUCA Digital CRM"
         />
         <ProjectRow
           description="A responsive brand website highlighting the menu and ordering process, featuring custom design and Vercel deployment."
-          image="./indiansavoury.jpg"
+          image="https://res.cloudinary.com/dxmnledfa/image/upload/v1772693489/indiansavoury_enfpx0.jpg"
           number={3}
           stack={["React", "Next.js", "Hero UI", "Figma"]}
           title="Indian Savoury Delights"

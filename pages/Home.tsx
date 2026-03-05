@@ -74,7 +74,7 @@ const Home: React.FC = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <div className="fixed inset-0 z-0">
-        <Scene3D background="https://i.imgur.com/706eK9Z.mp4" />
+        <Scene3D background="https://res.cloudinary.com/dxmnledfa/video/upload/v1772691980/home_bg_qlxvyy.mp4" />
       </div>
 
       <AnimatePresence>
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
           >
             <video
               className="absolute inset-0 w-full h-full object-cover"
-              src="https://i.imgur.com/706eK9Z.mp4"
+              src="https://res.cloudinary.com/dxmnledfa/video/upload/v1772691980/home_bg_qlxvyy.mp4"
               autoPlay
               loop
               muted

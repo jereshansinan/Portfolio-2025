@@ -10,7 +10,7 @@ const Specialising = () => {
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-fr">
         <div className="overflow-hidden rounded-lg min-h-[300px] relative group">
           <img
-            src="https://i.imgur.com/ZoQG7e9.png"
+            src="https://res.cloudinary.com/dxmnledfa/image/upload/v1772694600/Frame_1_x6ngpo.png"
             alt="UX work"
             className="w-full h-full object-cover transition-transform duration-500"
           />
@@ -21,7 +21,7 @@ const Specialising = () => {
 
         <div className="overflow-hidden rounded-lg min-h-[300px] relative group">
           <img
-            src="https://i.imgur.com/Xq6rceC.png"
+            src="https://res.cloudinary.com/dxmnledfa/image/upload/v1772694596/Frame_2_zs1uqa.png"
             alt="UI work"
             className="w-full h-full object-cover transition-transform duration-500"
           />
@@ -32,7 +32,7 @@ const Specialising = () => {
 
         <div className="overflow-hidden rounded-lg min-h-[300px] relative group">
           <img
-            src="https://i.imgur.com/X4GA7Yg.png"
+            src="https://res.cloudinary.com/dxmnledfa/image/upload/v1772694619/Frame_3_rvjavl.png"
             alt="Prototyping"
             className="w-full h-full object-cover transition-transform duration-500"
           />
@@ -43,7 +43,7 @@ const Specialising = () => {
 
         <div className="overflow-hidden rounded-lg min-h-[300px] relative group">
           <img
-            src="https://i.imgur.com/TqVRj3q.png"
+            src="https://res.cloudinary.com/dxmnledfa/image/upload/v1772694602/Frame_4_atirlr.png"
             alt="Wireframing"
             className="w-full h-full object-cover transition-transform duration-500"
           />

@@ -24,8 +24,6 @@ const Navbar: React.FC = () => {
     setScrolled(window.scrollY > 500);
   };
 
-  const videoEmbedUrl =
-    "https://www.youtube.com/embed/h62aeDVJ9IA?autoplay=1&mute=1&loop=1&playlist=h62aeDVJ9IA&controls=0";
   useEffect(() => {
     // Close menu on route change
     if (isOpen) toggleMenu();
@@ -60,7 +58,7 @@ const Navbar: React.FC = () => {
           stagger: 0.05,
           duration: 0.5,
         },
-        "<"
+        "<",
       );
 
       tl.to(
@@ -69,7 +67,7 @@ const Navbar: React.FC = () => {
           opacity: 0,
           duration: 0.5,
         },
-        "<"
+        "<",
       );
 
       tl.to(menuContentRef.current, {
@@ -92,7 +90,7 @@ const Navbar: React.FC = () => {
             }
           },
         },
-        "<"
+        "<",
       );
     } else {
       document.body.style.overflow = "hidden";
@@ -119,7 +117,7 @@ const Navbar: React.FC = () => {
           rotation: 0,
           duration: 1.25,
         },
-        "<"
+        "<",
       );
 
       tl.to(
@@ -129,7 +127,7 @@ const Navbar: React.FC = () => {
           duration: 1,
           delay: 0.5,
         },
-        "<"
+        "<",
       );
 
       tl.to(
@@ -141,7 +139,7 @@ const Navbar: React.FC = () => {
           duration: 1,
           delay: 0.5,
         },
-        "<"
+        "<",
       );
 
       tl.to(
@@ -153,7 +151,7 @@ const Navbar: React.FC = () => {
           duration: 1,
           delay: 0.5,
         },
-        "<0.2"
+        "<0.2",
       );
     }
   };
@@ -162,7 +160,7 @@ const Navbar: React.FC = () => {
     <>
       <nav className="fixed top-0 w-full z-50 bg-transparent page-specific-font font-[Jetbrains]">
         <div className="w-full px-6 py-6 flex items-center justify-between">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link
               to="/"
               className={clsx(
@@ -170,12 +168,12 @@ const Navbar: React.FC = () => {
                 location.pathname === "/" || location.pathname === "/3d-design"
                   ? "text-black"
                   : !isUiUxPage
-                  ? scrolled
-                    ? "text-black"
-                    : "text-white"
-                  : scrolled
-                  ? "text-white"
-                  : "text-white"
+                    ? scrolled
+                      ? "text-black"
+                      : "text-white"
+                    : scrolled
+                      ? "text-white"
+                      : "text-white",
               )}
             >
               JERESHANSINAN
@@ -190,12 +188,12 @@ const Navbar: React.FC = () => {
                 location.pathname === "/"
                   ? "text-white bg-[#1D1D1B]"
                   : !isUiUxPage
-                  ? scrolled
-                    ? "bg-black text-white hover:bg-white hover:text-black"
-                    : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
-                  : scrolled
-                  ? "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
-                  : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
+                    ? scrolled
+                      ? "bg-black text-white hover:bg-white hover:text-black"
+                      : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
+                    : scrolled
+                      ? "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
+                      : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white",
               )}
               aria-label="Menu"
             >
@@ -230,7 +228,7 @@ const Navbar: React.FC = () => {
                   className="w-full h-full object-cover"
                 >
                   <source
-                    src="https://i.imgur.com/mBp2hKK.mp4"
+                    src="https://res.cloudinary.com/dxmnledfa/video/upload/v1772691773/hero_navbar_lfxngt.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.

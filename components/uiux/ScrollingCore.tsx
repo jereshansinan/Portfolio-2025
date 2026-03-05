@@ -7,19 +7,19 @@ const ScrollingCore: React.FC = () => {
       id: 1,
       label: "Web & Mobile",
       title: "INTERFACES",
-      img: "https://i.imgur.com/oJx3Uv1.png",
+      img: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772694293/ui1_rqhzlo.png",
     },
     {
       id: 2,
       label: "Brand & Print",
       title: "IDENTITY",
-      img: "https://i.imgur.com/66GAeCt.png",
+      img: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772694333/ui2_v70gak.png",
     },
     {
       id: 3,
       label: "Code & Systems",
       title: "SYSTEMS",
-      img: "https://i.imgur.com/KTUIQEb.png",
+      img: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772694271/ui3_cwrvvw.png",
     },
   ];
 

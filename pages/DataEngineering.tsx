@@ -46,7 +46,8 @@ const myCertificates = [
     title: "Oracle Data Science Professional",
     date: "November 2025",
     link: "#",
-    image: "./OracleCerts/oracle3.png",
+    image:
+      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772709596/oracle3_s2o847.png",
   },
 ];
 
@@ -57,7 +58,7 @@ export default function DataEngineering() {
         {/* Hero Section with 3D Scene */}
         <section className="z-10 hero-section flex flex-col items-center justify-center gap-4 py-8 md:py-10 relative overflow-hidden h-[60vh] md:h-[100vh]">
           <div className="absolute inset-0 z-0">
-            <Scene3D background="https://i.imgur.com/pinoSFS.jpg" />
+            <Scene3D background="https://res.cloudinary.com/dxmnledfa/image/upload/v1772709863/3_v3oppx.png" />
           </div>
 
           <div className="inline-block max-w-xl text-center relative z-10 px-4">

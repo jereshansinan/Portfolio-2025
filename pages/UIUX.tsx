@@ -16,7 +16,8 @@ const myCertificates = [
     title: "UDEMY Figma - Web and Mobile Projects from Scratch",
     date: "August 2025",
     link: "#",
-    image: "./uiux/uiuxcert.png",
+    image:
+      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693725/uiuxcert_g9uqos.png",
   },
 ];
 
@@ -78,7 +79,7 @@ export default function UIUX() {
       {/* Hero Section with 3D Scene - Excluded from Mask Effect */}
       <section className="z-20 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative overflow-hidden h-[60vh] md:h-[100vh] page-specific-font-pp">
         <div className="absolute inset-0 z-0">
-          <Scene3D background="https://i.imgur.com/vlDzGcx.jpg" />
+          <Scene3D background="https://res.cloudinary.com/dxmnledfa/image/upload/v1772693934/5_trbfqi.png" />
         </div>
 
         <div className="inline-block max-w-4xl text-center relative z-10 px-4">
@@ -131,7 +132,7 @@ export default function UIUX() {
             <div className="hidden md:block border-r border-gray-700" />
 
             <div className="p-6 flex flex-col justify-end items-end col-span-1">
-              <div className="p-[1px] rounded-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md hover:shadow-lg transition-shadow">
+              <div className="p-px rounded-[10px] bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md hover:shadow-lg transition-shadow">
                 <a
                   href="https://www.behance.net/jereshansinan"
                   target="_blank"
@@ -149,21 +150,21 @@ export default function UIUX() {
         <Featured
           date={"11/2024"}
           description="A responsive brand website highlighting the menu and ordering process, featuring custom design."
-          image="./indiansavoury.jpg"
+          image="https://res.cloudinary.com/dxmnledfa/image/upload/v1772693489/indiansavoury_enfpx0.jpg"
           stack={["React", "TypeScript", "Node"]}
           title="Indian Savoury Delights"
         />
         <Featured
           date={"10/2024"}
           description="A full CRM application handling task management, customer tracking, and REST API integrations."
-          image="./vucadigital.png"
+          image="https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png"
           stack={["React", "TypeScript", "Node"]}
           title="VUCA Digital CRM"
         />
         <Featured
           date={"09/2024"}
           description="A centralized fitness & coaching platform replacing third-party tools with custom dashboards."
-          image="./molende.png"
+          image="https://res.cloudinary.com/dxmnledfa/image/upload/v1772693493/molende_ajnbrp.png"
           stack={["React", "TypeScript", "Node"]}
           title="Molende Sports"
         />

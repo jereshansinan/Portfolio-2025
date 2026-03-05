@@ -10,7 +10,7 @@ const galleryItems = [
   {
     id: 1,
     title: "Interface Design",
-    src: "./3ddesign/library.png", // Replace with your actual paths
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772700267/library_mgcp27.png", // Replace with your actual paths
   },
   {
     id: 2,
@@ -148,7 +148,7 @@ export default function Architecture() {
         {/* 2. Hero Section */}
         <section className="z-20 hero-section flex flex-col items-center justify-center gap-4 py-20 md:py-32 relative overflow-hidden h-[60vh] md:h-[100vh] page-specific-font-pp">
           <div className="absolute inset-0 z-0">
-            <Scene3D background="https://i.imgur.com/vlDzGcx.jpg" />
+            <Scene3D background="https://res.cloudinary.com/dxmnledfa/image/upload/v1772710626/4_yaaomh.png" />
           </div>
 
           <div className="inline-block max-w-4xl text-center relative z-10 px-4">
@@ -259,7 +259,7 @@ export default function Architecture() {
                         className="w-full h-full object-cover"
                       />
                       {/* Overlay Text in Full View */}
-                      <div className="absolute bottom-0 left-0 p-8 md:p-12 bg-gradient-to-t from-black/80 to-transparent w-full">
+                      <div className="absolute bottom-0 left-0 p-8 md:p-12 bg-linear-to-t from-black/80 to-transparent w-full">
                         <motion.h2 className="text-4xl md:text-6xl font-bold text-white mb-2">
                           {item.title}
                         </motion.h2>

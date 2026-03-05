@@ -5,16 +5,44 @@ import React from "react";
 // ----------------------------------------------------------------------
 
 const aiFrameworks = [
-  { name: "Python", years: "1 year", src: "/python.svg" },
-  { name: "Hugging Face", years: "1 year", src: "/ai/huggingface.svg" },
-  { name: "SMOTE", years: "1 year", src: "/ai/smote.svg" },
-  { name: "IBM AIF360", years: "1 year", src: "/ai/ibm.png" },
+  {
+    name: "Python",
+    years: "1 year",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692279/python_arrany.svg",
+  },
+  {
+    name: "Hugging Face",
+    years: "1 year",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701519/huggingface_tgmgcd.svg",
+  },
+  {
+    name: "SMOTE",
+    years: "1 year",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701521/smote_axpoli.svg",
+  },
+  {
+    name: "IBM AIF360",
+    years: "1 year",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701528/ibm_x5xcou.png",
+  },
 ];
 
 const aiTools = [
-  { name: "Google Colab", years: "2 years", src: "/ai/colab.svg" },
-  { name: "Gemini API", years: "1 year", src: "/ai/gemini.svg" },
-  { name: "AI Studio", years: "1 year", src: "/ai/aistudio.svg" },
+  {
+    name: "Google Colab",
+    years: "2 years",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701515/colab_stvbon.svg",
+  },
+  {
+    name: "Gemini API",
+    years: "1 year",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701517/gemini_ta2iyo.svg",
+  },
+  {
+    name: "AI Studio",
+    years: "1 year",
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701513/aistudio_cgvxgi.svg",
+  },
 ];
 
 // ----------------------------------------------------------------------
@@ -22,14 +50,16 @@ const aiTools = [
 // ----------------------------------------------------------------------
 
 const SkillItem = ({ item }: { item: (typeof aiFrameworks)[0] }) => (
-  <div className="flex-shrink-0 min-w-[200px] flex flex-col items-start border-r border-gray-300 mr-12 pl-4">
+  <div className="shrink-0 min-w-[200px] flex flex-col items-start border-r border-gray-300 mr-12 pl-4">
     <img
       alt={`${item.name} logo`}
       className="object-contain w-[100px] h-[100px]"
       src={item.src}
     />
-    <span className="mt-4 text-black text-2xl md:text-3xl font-bold">{item.name}</span>
-    <span className="mt-1 font-semibold text-2xl md:text-2xl bg-gradient-to-r from-[#FF3F3F] via-[#28FFB4] to-[#8833FF] bg-clip-text text-transparent">
+    <span className="mt-4 text-black text-2xl md:text-3xl font-bold">
+      {item.name}
+    </span>
+    <span className="mt-1 font-semibold text-2xl md:text-2xl bg-linear-to-r from-[#FF3F3F] via-[#28FFB4] to-[#8833FF] bg-clip-text text-transparent">
       {item.years}
     </span>
   </div>
@@ -118,11 +148,7 @@ const Specialising = () => {
       <SkillRow items={aiFrameworks} title="Languages & Frameworks" />
 
       {/* Row 2: DevOps (Reverse Layout) */}
-      <SkillRow
-        items={aiTools}
-        reverse={true}
-        title="DevOps, Cloud & Tools"
-      />
+      <SkillRow items={aiTools} reverse={true} title="DevOps, Cloud & Tools" />
 
       {/* Animation Styles */}
       <style>{`
