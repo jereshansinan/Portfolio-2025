@@ -46,10 +46,10 @@ const ScrollingCore: React.FC = () => {
           <div className="relative w-full min-h-[50vh] md:min-h-[65vh] flex items-center justify-center overflow-visible my-10 md:my-0">
             <div
               aria-hidden
-              className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] leading-[0.9] font-black text-white/10 md:text-white whitespace-nowrap pointer-events-none select-none z-0 page-specific-font-pp ${
+              className={`absolute justify-center text-[15vw] leading-[0.9] font-black text-white/10 md:text-white whitespace-nowrap pointer-events-none select-none z-0 page-specific-font-pp ${
                 it.id === 2
                   ? "text-[20vw] md:text-[clamp(60px,20vw,270px)]"
-                  : "text-[15vw] md:text-[clamp(60px,20vw,200px)]"
+                  : "text-[15vw] md:text-[clamp(60px,20vw,270px)]"
               }`}
             >
               {it.title}

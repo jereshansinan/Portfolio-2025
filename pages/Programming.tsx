@@ -48,16 +48,19 @@ export default function Programming() {
 
       <section className="w-full border-b border-gray-300 bg-white page-specific-font">
         <div className="min-h-[200px] grid grid-cols-1 md:grid-cols-3">
-          <div className="flex items-center justify-start p-8 text-left border-b md:border-b-0 md:border-r border-gray-300 col-span-1 md:col-span-1">
-            <h2 className="text-4xl md:text-7xl text-black font-bold">
-              PROJECTS
+          {/* Column 1 */}
+          <div className="flex items-center justify-start p-8 border-b md:border-b-0 md:border-r border-gray-300">
+            <h2 className="text-4xl md:text-7xl text-black font-bold uppercase">
+              Projects
             </h2>
           </div>
 
+          {/* Column 2 - Now an empty cell with a right border */}
           <div className="hidden md:block border-r border-gray-300" />
 
-          <div className="p-6 flex flex-col justify-end items-end col-span-1">
-            <div className="p-px rounded-[10px] bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md hover:shadow-lg transition-shadow">
+          {/* Column 3 */}
+          <div className="p-8 flex flex-col justify-end items-end">
+            <div className="p-[1.5px] rounded-[10px] button-gradient shadow-md hover:shadow-lg transition-all">
               <Link to="/programming/projects">
                 <button className="bg-white text-black rounded-[9px] px-6 py-2 text-xl hover:bg-black hover:text-white transition-colors">
                   View All

@@ -1,5 +1,3 @@
-import React from "react";
-
 // ----------------------------------------------------------------------
 // 1. DATA CONFIGURATION
 // ----------------------------------------------------------------------
@@ -117,7 +115,7 @@ const SkillItem = ({ item }: { item: (typeof languages)[0] }) => (
       src={item.src}
     />
     <span className="mt-4 text-black text-xl font-bold">{item.name}</span>
-    <span className="mt-1 font-semibold bg-linear-to-r from-[#FF3F3F] via-[#28FFB4] to-[#8833FF] bg-clip-text text-transparent">
+    <span className="mt-1 font-semibold text-gradient bg-clip-text text-transparent">
       {item.years}
     </span>
   </div>

@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
-import VanillaTilt from "vanilla-tilt";
 import { Link } from "react-router-dom";
+import Grainient from "../Grainient";
 
-// 1. Define Types
 interface DataGridProps {
   src?: string;
   Title: string;
@@ -14,22 +13,21 @@ interface DataGridProps {
   color: "red" | "purple" | "blue" | "green" | "violet" | "yellow";
 }
 
-// 2. Configuration Maps
-const gradients = {
-  red: "hover:from-[#f2709c] hover:to-[#ff9472]",
-  purple: "hover:from-[#4776E6] hover:to-[#8E54E9]",
-  blue: "hover:from-[#4CB8C4] hover:to-[#3CD3AD]",
-  green: "hover:from-[#11998e] hover:to-[#38ef7d]",
-  violet: "hover:from-[#8E2DE2] hover:to-[#4A00E0]",
-  yellow: "hover:from-[#F09819] hover:to-[#EDDE5D]",
+// 1. Map your color keys to hex arrays for Grainient
+const colorPresets = {
+  red: { c1: "#f2709c", c2: "#ff9472", c3: "#f2709c" },
+  purple: { c1: "#4776E6", c2: "#8E54E9", c3: "#4776E6" },
+  blue: { c1: "#4CB8C4", c2: "#3CD3AD", c3: "#4CB8C4" },
+  green: { c1: "#11998e", c2: "#38ef7d", c3: "#11998e" },
+  violet: { c1: "#8E2DE2", c2: "#4A00E0", c3: "#8E2DE2" },
+  yellow: { c1: "#F09819", c2: "#EDDE5D", c3: "#F09819" },
 };
 
-// Base styles common to both sizes (Right border is constant)
 const commonBorder = "border-r border-[#ff8559]";
 
 const sizeClasses = {
   big: "h-[50vh] md:h-[80vh]",
-  small: "h-[40vh] md:h-[60vh] border-b border-[#ff8559]", // Small also has bottom border
+  small: "h-[40vh] md:h-[60vh] border-b border-[#ff8559]",
 };
 
 export const DataGrid = ({
@@ -41,59 +39,68 @@ export const DataGrid = ({
   href,
   color,
 }: DataGridProps) => {
+  const [isHovered, setIsHovered] = useState(false);
   const hasTopBorder = Title !== "Geometry Nodes" && Title !== "Wierd Stuff";
 
-  const tiltRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const tiltNode = tiltRef.current;
-    if (!tiltNode) return;
-
-    VanillaTilt.init(tiltNode, {
-      max: size === "small" ? 4 : 3,
-      speed: 100,
-    });
-
-    return () => {};
-  }, [size]);
+  const activeColors = colorPresets[color];
 
   return (
     <Link
       to={href}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className="block group w-full outline-none focus-visible:ring-2 focus-visible:ring-[#ff8559]"
     >
       <article
-        ref={tiltRef}
-        data-interactive="true"
         className={clsx(
-          // Layout & Transitions
-          "relative flex flex-col justify-between overflow-hidden p-4 md:p-6 transition-all duration-300 ease-in-out",
-          // Backgrounds
-          "bg-[#f0f0f0] bg-fixed bg-clip-border bg-gradient-to-b from-white to-white",
-
-          // Sizing & Borders
+          "relative flex flex-col justify-between overflow-hidden p-4 md:p-6 transition-all duration-500 ease-in-out bg-[#f0f0f0]",
           commonBorder,
           sizeClasses[size],
-          hasTopBorder && "border-t border-[#ff8559]", // Conditionally add top border
-
-          // Color Gradients
-          gradients[color]
+          hasTopBorder && "border-t border-[#ff8559]",
         )}
       >
-        {/* Main Content */}
-        <div className="flex flex-col gap-4 relative z-20">
-          {/* Hover Reveal Image - Fixed to Center of Viewport */}
-          {src && (
-            <div className="hidden md:group-hover:block fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[999] pointer-events-none animate-in fade-in zoom-in duration-200">
-              <img
-                src={src}
-                alt={`${Title} preview`}
-                className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] object-cover rounded-2xl shadow-2xl shadow-black/50"
-              />
-            </div>
+        {/* GRAINIENT BACKGROUND - Only visible on hover */}
+        <div
+          className={clsx(
+            "absolute inset-0 z-0 transition-opacity duration-500",
+            isHovered ? "opacity-100" : "opacity-0",
           )}
+        >
+          <Grainient
+            color1={activeColors.c1}
+            color2={activeColors.c2}
+            color3={activeColors.c3}
+            timeSpeed={1.6}
+          />
+        </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mix-blend-multiply">
+        {/* Video/Image Preview Container */}
+        {src && (
+          <div className="hidden md:group-hover:flex absolute inset-0 items-center justify-center z-30 pointer-events-none animate-in fade-in zoom-in duration-300 px-6">
+            <div className="w-full aspect-square max-w-[250px] lg:max-w-[350px] overflow-hidden rounded-2xl shadow-2xl shadow-black/40 bg-black">
+              {src.match(/\.(mp4|webm|mov|ogg)$/i) ? (
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <img
+                  src={src}
+                  alt={`${Title} preview`}
+                  className="w-full h-full object-cover"
+                />
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Header Content */}
+        <div className="flex flex-col gap-4 relative z-20">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mix-blend-multiply tracking-tighter">
             {Title}
           </h1>
         </div>

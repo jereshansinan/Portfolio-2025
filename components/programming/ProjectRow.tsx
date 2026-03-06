@@ -16,47 +16,38 @@ const ProjectRow: React.FC<ProjectsProps> = ({
   stack,
 }) => {
   return (
-    <div className="w-full flex flex-col md:flex-row items-stretch min-h-[400px] gap-0 border-b border-gray-300 bg-white">
+    <div className="w-full grid grid-cols-1 md:grid-cols-3 min-h-[400px] border-b border-gray-300 bg-white">
       {/* Column 1 */}
-      <div className="flex-1 pl-2 flex flex-col justify-center py-8 md:py-0">
-        <div className="flex flex-col md:flex-col md:items-start pl-4 md:pl-8">
-          <div className="inline-flex items-center">
-            <div className="rounded-[10px] p-[1px] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
-              <div className="bg-white rounded-md w-10 border md:w-12 aspect-square flex items-center justify-center font-bold text-black">
-                {number}
-              </div>
-            </div>
+      <div className="flex flex-col justify-center p-8 border-b md:border-b-0 md:border-r border-gray-300">
+        <div className="rounded-[10px] p-px button-gradient w-12 h-12 flex items-center justify-center mb-8">
+          <div className="bg-white rounded-md w-full h-full flex items-center justify-center font-bold text-black">
+            {number}
           </div>
-
-          <div className="mt-8 md:mt-16 text-left">
-            <h3 className="m-0 text-3xl md:text-5xl font-medium text-black">{title}</h3>
-            <p className="mt-5 text-lg text-gray-600 pr-4">{description}</p>
-          </div>
+        </div>
+        <div className="text-left">
+          <h3 className="text-3xl md:text-5xl font-medium text-black">
+            {title}
+          </h3>
+          <p className="mt-5 text-lg text-gray-600">{description}</p>
         </div>
       </div>
 
-      {/* Vertical separator (visible on md and up) */}
-      <div className="hidden md:block w-px bg-gray-300" />
-
       {/* Column 2 */}
-      <div className="flex-1 p-4 md:p-2 flex items-center justify-center border-t md:border-t-0 border-gray-200">
+      <div className="flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-gray-300">
         <img
-          alt={String(title)}
-          className="w-full md:max-w-[90%] max-h-64 md:max-h-72 object-contain rounded-md shadow-sm"
+          alt={title}
+          className="w-full max-h-72 object-contain rounded-md shadow-sm"
           src={image}
         />
       </div>
 
-      {/* Vertical separator (visible on md and up) */}
-      <div className="hidden md:block w-px bg-gray-300" />
-
       {/* Column 3 */}
-      <div className="flex-1 p-0 flex flex-col justify-end border-t md:border-t-0 border-gray-200">
+      <div className="flex flex-col justify-end">
         <div className="w-full text-lg md:text-xl text-black">
           {stack.map((item, idx) => (
             <div
               key={idx}
-              className="py-3 px-4 border-t border-gray-300 first:border-t-0 md:first:border-t"
+              className="py-4 px-8 border-t border-gray-300 first:border-t-0"
             >
               {item}
             </div>
