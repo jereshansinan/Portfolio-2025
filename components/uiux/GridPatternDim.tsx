@@ -4,7 +4,8 @@ interface GridProps {
   className?: string;
 }
 
-const GridPatternDim: React.FC<GridProps> = ({ className }) => {
+// eslint-disable-next-line no-empty-pattern
+const GridPatternDim: React.FC<GridProps> = ({ }) => {
   return (
     <svg
       width="1574"

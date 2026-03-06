@@ -6,7 +6,7 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { ArrowUpRight, Github, X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 
 // Define the shape of your project data
 interface Project {
@@ -124,6 +124,7 @@ const ProjectCard = ({
 }: {
   project: Project;
   height: string;
+  // eslint-disable-next-line no-unused-vars
   onHover: (id: string | null) => void;
   onClick: () => void;
 }) => {
@@ -159,7 +160,7 @@ const ProjectCard = ({
           }}
         >
           <div className="absolute inset-0 p-[3px]">
-            <div className="absolute inset-[-100%] animate-rotate bg-[conic-gradient(from_0deg,#A855F7,#3B82F6,#EC4899,#A855F7)]" />
+            <div className="absolute -inset-full animate-rotate bg-[conic-gradient(from_0deg,#A855F7,#3B82F6,#EC4899,#A855F7)]" />
           </div>
         </div>
 
@@ -217,7 +218,7 @@ const ProjectOverlay = ({
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-[1000] bg-black/98 backdrop-blur-2xl overflow-y-auto p-10 cursor-default"
+    className="fixed inset-0 z-1000 bg-black/98 backdrop-blur-2xl overflow-y-auto p-10 cursor-default"
   >
     <button onClick={onClose} className="fixed top-10 right-10 text-white">
       <X size={48} />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Scene3D from "@/components/Scene3D";
@@ -10,7 +10,7 @@ const galleryItems = [
   {
     id: 1,
     title: "Interface Design",
-    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772700267/library_mgcp27.png", // Replace with your actual paths
+    src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772700267/library_mgcp27.png",
   },
   {
     id: 2,
@@ -167,19 +167,16 @@ export default function Architecture() {
               </div>
               <div className="lg:col-span-8">
                 <p className="text-xl md:text-3xl text-black leading-relaxed font-light">
-                  My work in 3D architecture focuses on transforming concepts
-                  into tangible, photorealistic environments. I combine
-                  technical precision with artistic direction to create detailed
-                  models and renders that accurately represent scale, material,
+                  My work in 3D architecture focuses on transforming concepts into tangible,
+                  photorealistic environments. I combine technical precision with artistic direction
+                  to create detailed models and renders that accurately represent scale, material,
                   and lighting.
                 </p>
                 <p className="mt-8 text-xl md:text-3xl text-black leading-relaxed font-light">
-                  Whether visualizing modern interiors or complex exterior
-                  structures, I prioritize clarity and realism. I treat each
-                  project as a functional design challenge, ensuring that the
-                  final visuals not only look impressive but effectively
-                  communicate the spatial qualities and design intent to the
-                  viewer.
+                  Whether visualizing modern interiors or complex exterior structures, I prioritize
+                  clarity and realism. I treat each project as a functional design challenge,
+                  ensuring that the final visuals not only look impressive but effectively
+                  communicate the spatial qualities and design intent to the viewer.
                 </p>
               </div>
             </div>
@@ -241,7 +238,7 @@ export default function Architecture() {
                     layoutId={`card-${item.id}`}
                     key={item.id}
                     className="relative w-full max-w-7xl h-[80vh] bg-neutral-900 overflow-hidden shadow-2xl flex flex-col md:flex-row"
-                    onClick={(e) => e.stopPropagation()} // Prevent closing when clicking content
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {/* Close Button */}
                     <button

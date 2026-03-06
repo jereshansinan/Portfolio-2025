@@ -28,19 +28,13 @@ const ScrollingCore: React.FC = () => {
       aria-label="Scrolling focus section page-specific-font-pp"
       className="w-full py-12 md:py-[6vh] flex flex-col gap-16 md:gap-[10vh] items-center bg-transparent overflow-hidden backdrop-blur-[2px]"
     >
-      {items.map((it, index) => (
-        <div
-          key={it.id}
-          className="w-full max-w-[1300px] relative px-4 md:px-[4vw] box-border"
-        >
+      {items.map((it) => (
+        <div key={it.id} className="w-full max-w-[1300px] relative px-4 md:px-[4vw] box-border">
           <div className="absolute left-8 -top-7 flex items-center gap-3 z-40">
             <div className="bg-white px-3 py-1 rounded-md text-sm font-extrabold shadow-md text-black page-specific-font">
               {it.label}
             </div>
-            <div
-              aria-hidden
-              className="w-[2px] h-[28px] bg-gray-200 ml-1 rounded-sm"
-            />
+            <div aria-hidden className="w-[2px] h-[28px] bg-gray-200 ml-1 rounded-sm" />
           </div>
 
           <div className="relative w-full min-h-[50vh] md:min-h-[65vh] flex items-center justify-center overflow-visible my-10 md:my-0">
