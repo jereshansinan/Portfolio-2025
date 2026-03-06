@@ -100,7 +100,7 @@ const Certificates = ({ items }: { items: CertificateProps[] }) => {
             key={activeItem.id}
             src={activeItem.image}
             alt={activeItem.title}
-            className="fixed z-50 pointer-events-none object-cover w-[400px] h-[250px] rounded-xl border-2 border-black shadow-2xl bg-white"
+            className="fixed z-50 pointer-events-none object-cover w-[400px] h-[300px] rounded-xl border-2 border-black shadow-2xl bg-white"
             style={{
               left: smoothX,
               top: smoothY,

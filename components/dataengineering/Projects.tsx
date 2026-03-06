@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+
 import {
   motion,
   AnimatePresence,
@@ -51,7 +52,7 @@ const FullWidthProjects = ({
     <div className="relative w-full min-h-screen bg-transparent cursor-none py-4 px-6">
       {/* Custom Cursor - Pill Shape on Hover */}
       <motion.div
-        className="fixed top-0 left-0 z-400 pointer-events-none flex items-center justify-center overflow-hidden mix-blend-difference"
+        className="fixed top-0 left-0 z-400 pointer-events-none flex items-center justify-center overflow-hidden "
         style={{
           x: cursorX,
           y: cursorY,
@@ -71,7 +72,7 @@ const FullWidthProjects = ({
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="flex items-center gap-2 text-white text-xs font-black tracking-widest px-4"
+              className="flex items-center gap-2 text-white text-xs font-black tracking-widest px-4 page-specific-font"
             >
               EXPLORE <ArrowUpRight size={18} strokeWidth={3} />
             </motion.div>
