@@ -26,7 +26,7 @@ const ThreeDDesign: React.FC = () => {
             heading="Fiction and non-Fiction"
             date="2022"
             href="/Portraits"
-            color="violet"
+            color="grey"
           />
           <DataGrid
             size="big"
@@ -54,6 +54,7 @@ const ThreeDDesign: React.FC = () => {
             date="2022"
             href="/GeometryNodes"
             color="purple"
+            isTextWhite
           />
           <DataGrid
             size="small"
@@ -66,9 +67,6 @@ const ThreeDDesign: React.FC = () => {
           <div className="sc-fznZeY jvpqPC"></div>
         </div>
       </div>
-      <a className="button-top">
-        <i className="fa fa-angle-up"></i>
-      </a>
     </div>
   );
 };

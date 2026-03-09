@@ -10,7 +10,8 @@ interface DataGridProps {
   date: string;
   size: "small" | "big";
   href: string;
-  color: "red" | "purple" | "blue" | "green" | "violet" | "yellow";
+  color: "red" | "purple" | "blue" | "green" | "grey" | "yellow";
+  isTextWhite?: boolean;
 }
 
 // 1. Map your color keys to hex arrays for Grainient
@@ -19,7 +20,7 @@ const colorPresets = {
   purple: { c1: "#4776E6", c2: "#8E54E9", c3: "#4776E6" },
   blue: { c1: "#4CB8C4", c2: "#3CD3AD", c3: "#4CB8C4" },
   green: { c1: "#11998e", c2: "#38ef7d", c3: "#11998e" },
-  violet: { c1: "#8E2DE2", c2: "#4A00E0", c3: "#8E2DE2" },
+  grey: { c1: "#606c88", c2: "#3f4c6b", c3: "#606c88" },
   yellow: { c1: "#F09819", c2: "#EDDE5D", c3: "#F09819" },
 };
 
@@ -30,19 +31,18 @@ const sizeClasses = {
   small: "h-[40vh] md:h-[60vh] border-b border-[#ff8559]",
 };
 
-export const DataGrid = ({
-  size,
-  src,
-  Title,
-  heading,
-  date,
-  href,
-  color,
-}: DataGridProps) => {
+export const DataGrid = ({ size, src, Title, heading, date, href, color }: DataGridProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const hasTopBorder = Title !== "Geometry Nodes" && Title !== "Wierd Stuff";
 
   const activeColors = colorPresets[color];
+
+  const darkGradients = ["purple", "green", "red", "blue", "grey"];
+
+  const textColorClass = isHovered && darkGradients.includes(color) ? "text-white" : "text-black";
+
+  const headingColorClass =
+    isHovered && darkGradients.includes(color) ? "text-white" : "text-gray-800";
 
   return (
     <Link
@@ -53,17 +53,17 @@ export const DataGrid = ({
     >
       <article
         className={clsx(
-          "relative flex flex-col justify-between overflow-hidden p-4 md:p-6 transition-all duration-500 ease-in-out bg-[#f0f0f0]",
+          "relative flex flex-col justify-between overflow-hidden p-4 md:p-6 transition-all duration-500 ease-in-out",
           commonBorder,
           sizeClasses[size],
-          hasTopBorder && "border-t border-[#ff8559]",
+          hasTopBorder && "border-t border-[#ff8559]"
         )}
       >
         {/* GRAINIENT BACKGROUND - Only visible on hover */}
         <div
           className={clsx(
             "absolute inset-0 z-0 transition-opacity duration-500",
-            isHovered ? "opacity-100" : "opacity-0",
+            isHovered ? "opacity-100" : "opacity-0"
           )}
         >
           <Grainient
@@ -88,11 +88,7 @@ export const DataGrid = ({
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <img
-                  src={src}
-                  alt={`${Title} preview`}
-                  className="w-full h-full object-cover"
-                />
+                <img src={src} alt={`${Title} preview`} className="w-full h-full object-cover" />
               )}
             </div>
           </div>
@@ -100,17 +96,27 @@ export const DataGrid = ({
 
         {/* Header Content */}
         <div className="flex flex-col gap-4 relative z-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mix-blend-multiply tracking-tighter">
+          <h1
+            className={clsx(
+              "text-3xl sm:text-4xl md:text-5xl lg:text-6xl mix-blend-multiply tracking-tighter transition-colors duration-300",
+              textColorClass
+            )}
+          >
             {Title}
           </h1>
         </div>
 
         {/* Footer Info */}
         <footer className="mt-auto flex flex-col gap-1 relative z-10">
-          <h2 className="text-sm sm:text-base md:text-lg font-medium uppercase tracking-wider text-gray-800">
+          <h2
+            className={clsx(
+              "text-sm sm:text-base md:text-lg font-medium uppercase tracking-wider transition-colors duration-300",
+              headingColorClass
+            )}
+          >
             {heading}
           </h2>
-          <h3 className="text-xs sm:text-sm text-gray-500 font-mono">{date}</h3>
+          <h3 className={clsx("text-xs sm:text-sm font-mono", textColorClass)}>{date}</h3>
         </footer>
       </article>
     </Link>
