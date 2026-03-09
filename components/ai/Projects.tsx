@@ -37,9 +37,8 @@ const ProjectCard = React.memo(
             style={{ backgroundImage: `url(${image})` }}
           />
         </a>
-
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
         <div
-          role="presentation"
           className="absolute bottom-0 left-0 w-full backdrop-blur-md bg-black/40 border-t border-white/10 p-6 md:p-8 rounded-b-[15px] z-10 cursor-auto"
           onMouseEnter={onMouseLeave}
         >
@@ -147,10 +146,10 @@ const AIProjects = ({ items }: { items: ProjectProps[] }) => {
       />
 
       {/* Sticky project sections */}
-      {items.map((project, index) => (
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+      {items.map((project) => (
         <section
           key={project.title}
-          role="presentation"
           className="relative md:h-screen w-full flex items-center justify-center overflow-hidden px-4 md:px-12 snap-start"
           onMouseEnter={() => setIsHoveringProject(true)}
           onMouseLeave={() => setIsHoveringProject(false)}

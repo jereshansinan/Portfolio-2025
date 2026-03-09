@@ -42,11 +42,7 @@ const Certificates = ({ items }: { items: CertificateProps[] }) => {
   const activeItem = items.find((item) => item.id === hoveredId);
 
   return (
-    <section
-      className="relative w-full cursor-none bg-transparent"
-      onMouseMove={handleMouseMove}
-      role="presentation"
-    >
+    <section className="relative w-full cursor-none bg-transparent" onMouseMove={handleMouseMove}>
       <div className="w-full border-b border-gray-300">
         {items.map((it, idx) => (
           <a
