@@ -7,9 +7,10 @@ interface ThreeDProjectsTransitionProps {
   to: string;
 }
 
-export const ThreeDProjectsTransition: React.FC<
-  ThreeDProjectsTransitionProps
-> = ({ children, to }) => {
+export const ThreeDProjectsTransition: React.FC<ThreeDProjectsTransitionProps> = ({
+  children,
+  to,
+}) => {
   const navigate = useNavigate();
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -42,16 +43,13 @@ export const ThreeDProjectsTransition: React.FC<
 
   return (
     <>
-      <div
-        onClickCapture={handleClick}
-        className="cursor-pointer block relative"
-      >
+      <div onClickCapture={handleClick} className="cursor-pointer block relative">
         {children}
       </div>
 
       <div
         ref={overlayRef}
-        className="fixed top-0 left-0 w-full h-screen z-[9999] bg-[#1D1D1B]"
+        className="fixed top-0 left-0 w-full h-screen z-9999 bg-[#1D1D1B]"
         style={{
           display: "none", // Hidden initially
           clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
