@@ -237,7 +237,7 @@ const Navbar: React.FC = () => {
             <div className="col-sm">
               <div className="menu-links">
                 {NAV_ITEMS.map((item, i) => (
-                  <div key={i} className="link text-white">
+                  <div key={item.label} className="link text-white">
                     {item.path.startsWith("http") ? (
                       <a
                         ref={(el) => {

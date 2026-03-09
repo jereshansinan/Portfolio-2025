@@ -11,9 +11,7 @@ const GridOverlay = ({ isVisible }: { isVisible: boolean }) => {
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
-    if (isVisible) {
-      /* empty */
-    } else {
+    if (!isVisible) {
       setStage(0);
     }
   }, [isVisible]);

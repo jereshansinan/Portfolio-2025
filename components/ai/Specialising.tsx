@@ -1,26 +1,24 @@
-import React from "react";
-
-// ----------------------------------------------------------------------
-// 1. DATA CONFIGURATION
-// ----------------------------------------------------------------------
-
 const aiFrameworks = [
   {
+    id: 0,
     name: "Python",
     years: "1 year",
     src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772692279/python_arrany.svg",
   },
   {
+    id: 1,
     name: "Hugging Face",
     years: "1 year",
     src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701519/huggingface_tgmgcd.svg",
   },
   {
+    id: 2,
     name: "SMOTE",
     years: "1 year",
     src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701521/smote_axpoli.svg",
   },
   {
+    id: 3,
     name: "IBM AIF360",
     years: "1 year",
     src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701528/ibm_x5xcou.png",
@@ -29,16 +27,19 @@ const aiFrameworks = [
 
 const aiTools = [
   {
+    id: 0,
     name: "Google Colab",
     years: "2 years",
     src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701515/colab_stvbon.svg",
   },
   {
+    id: 1,
     name: "Gemini API",
     years: "1 year",
     src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701517/gemini_ta2iyo.svg",
   },
   {
+    id: 2,
     name: "AI Studio",
     years: "1 year",
     src: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701513/aistudio_cgvxgi.svg",
@@ -51,17 +52,9 @@ const aiTools = [
 
 const SkillItem = ({ item }: { item: (typeof aiFrameworks)[0] }) => (
   <div className="shrink-0 min-w-[200px] flex flex-col items-start border-r border-gray-300 mr-12 pl-4">
-    <img
-      alt={`${item.name} logo`}
-      className="object-contain w-[100px] h-[100px]"
-      src={item.src}
-    />
-    <span className="mt-4 text-black text-2xl md:text-3xl font-bold">
-      {item.name}
-    </span>
-    <span className="mt-1 font-semibold text-2xl md:text-2xl text-black">
-      {item.years}
-    </span>
+    <img alt={`${item.name} logo`} className="object-contain w-[100px] h-[100px]" src={item.src} />
+    <span className="mt-4 text-black text-2xl md:text-3xl font-bold">{item.name}</span>
+    <span className="mt-1 font-semibold text-2xl md:text-2xl text-black">{item.years}</span>
   </div>
 );
 
@@ -87,11 +80,8 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
                 }}
               >
                 {/* Duplicate list for seamless loop */}
-                {items.map((item, index) => (
-                  <SkillItem key={`r-a-${index}`} item={item} />
-                ))}
-                {items.map((item, index) => (
-                  <SkillItem key={`r-b-${index}`} item={item} />
+                {[...items, ...items, ...items].map((item) => (
+                  <SkillItem key={`r-a-${item.id}`} item={item} />
                 ))}
               </div>
             </div>
@@ -122,11 +112,8 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
                 }}
               >
                 {/* Duplicate list for seamless loop */}
-                {items.map((item, index) => (
-                  <SkillItem key={`s-a-${index}`} item={item} />
-                ))}
-                {items.map((item, index) => (
-                  <SkillItem key={`s-b-${index}`} item={item} />
+                {[...items, ...items, ...items].map((item) => (
+                  <SkillItem key={`s-a-${item.id}`} item={item} />
                 ))}
               </div>
             </div>
@@ -154,10 +141,10 @@ const Specialising = () => {
       <style>{`
         @keyframes scroll-left {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-33.333%); }
         }
         @keyframes scroll-right {
-          0% { transform: translateX(-50%); }
+          0% { transform: translateX(-33.333%); }
           100% { transform: translateX(0); }
         }
         /* Hover effect to pause scrolling so users can read */

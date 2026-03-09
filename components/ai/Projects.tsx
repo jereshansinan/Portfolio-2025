@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 import "../../public/fonts/broft.css";
 import "../../public/fonts/jetbrains.css";
 import { ArrowUpRight } from "lucide-react";
@@ -44,6 +39,7 @@ const ProjectCard = React.memo(
         </a>
 
         <div
+          role="presentation"
           className="absolute bottom-0 left-0 w-full backdrop-blur-md bg-black/40 border-t border-white/10 p-6 md:p-8 rounded-b-[15px] z-10 cursor-auto"
           onMouseEnter={onMouseLeave}
         >
@@ -62,9 +58,7 @@ const ProjectCard = React.memo(
               className="group/btn flex items-center justify-between gap-4 bg-white hover:bg-gray-100 text-black pl-6 pr-2 py-2 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer w-full md:w-auto min-w-[200px]"
               onMouseEnter={(e) => e.stopPropagation()}
             >
-              <span className="font-bold text-sm tracking-wide">
-                VIEW DOCUMENTATION
-              </span>
+              <span className="font-bold text-sm tracking-wide">VIEW DOCUMENTATION</span>
               <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center transition-transform duration-300 group-hover/btn:rotate-45">
                 <ArrowUpRight size={20} strokeWidth={2.5} />
               </div>
@@ -88,7 +82,7 @@ const ProjectCursor = React.memo(({ isHovering }: { isHovering: boolean }) => {
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 50); // Pre-offset for translate -50%
+      cursorX.set(e.clientX - 50);
       cursorY.set(e.clientY - 50);
     };
     window.addEventListener("mousemove", moveCursor);
@@ -138,8 +132,7 @@ const AIProjects = ({ items }: { items: ProjectProps[] }) => {
       <div
         className="fixed inset-0 -z-10"
         style={{
-          background:
-            "linear-gradient(to bottom right, #A4A4A4, #CCCCCC, #989898)",
+          background: "linear-gradient(to bottom right, #A4A4A4, #CCCCCC, #989898)",
         }}
       />
 
@@ -156,7 +149,8 @@ const AIProjects = ({ items }: { items: ProjectProps[] }) => {
       {/* Sticky project sections */}
       {items.map((project, index) => (
         <section
-          key={index}
+          key={project.title}
+          role="presentation"
           className="relative md:h-screen w-full flex items-center justify-center overflow-hidden px-4 md:px-12 snap-start"
           onMouseEnter={() => setIsHoveringProject(true)}
           onMouseLeave={() => setIsHoveringProject(false)}

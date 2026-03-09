@@ -41,9 +41,7 @@ const ScrollingCore: React.FC = () => {
             <div
               aria-hidden
               className={`absolute justify-center text-[15vw] leading-[0.9] font-black text-white/10 md:text-white whitespace-nowrap pointer-events-none select-none z-0 page-specific-font-pp ${
-                it.id === 2
-                  ? "text-[20vw] md:text-[clamp(60px,20vw,270px)]"
-                  : "text-[15vw] md:text-[clamp(60px,20vw,270px)]"
+                it.id === 2 ? "text-[clamp(60px,18vw,270px)]" : "text-[clamp(60px,14vw,270px)]"
               }`}
             >
               {it.title}
