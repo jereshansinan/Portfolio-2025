@@ -2,8 +2,6 @@ import React from "react";
 import AIProjects from "../components/ai/Projects";
 import Certificates from "../components/Certificates";
 import Scene3D from "../components/Scene3D";
-import "../public/fonts/broft.css";
-import "../public/fonts/jetbrains.css";
 import Specialising from "../components/ai/Specialising";
 
 const myCertificates = [
@@ -14,8 +12,7 @@ const myCertificates = [
     title: "Oracle Generative AI Professional",
     date: "October 2025",
     link: "#",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772700721/oracle1_nsmme1.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772700721/oracle1_nsmme1.png",
   },
   {
     id: 2,
@@ -24,8 +21,7 @@ const myCertificates = [
     title: "Oracle Certified AI Foundations Associate",
     date: "October 2025",
     link: "#",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772700726/oracle2_qnmich.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772700726/oracle2_qnmich.png",
   },
   {
     id: 3,
@@ -151,8 +147,7 @@ const myCertificates = [
 
 const myProjects = [
   {
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701266/1_kwrftd.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701266/1_kwrftd.png",
     title: "Domain-Specific AI Tutor",
     description:
       "A specialized conversational agent that tutors users on AI topics, providing real-time course suggestions, visual references, and verified academic sources.",
@@ -161,8 +156,7 @@ const myProjects = [
       "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/buhlaluse_ngcobo_capaciti_org_za/Ed3ipxRHa2NFh-8r3Xc9AwABlw3jWZD68BaFQXYovPISeg?e=eUuaSh",
   },
   {
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701283/2_uyhke6.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701283/2_uyhke6.png",
     title: "HealthGuard",
     description:
       "A specialized conversational agent that tutors users on AI topics, providing real-time course suggestions, visual references, and verified academic sources.",
@@ -171,8 +165,7 @@ const myProjects = [
       "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/buhlaluse_ngcobo_capaciti_org_za/Ed3ipxRHa2NFh-8r3Xc9AwABlw3jWZD68BaFQXYovPISeg?e=eUuaSh",
   },
   {
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701288/3_wdhgmw.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701288/3_wdhgmw.png",
     title: "Creative AI Story Generator",
     description:
       "A generative AI solution fine-tuned for literary creativity, capable of producing high-fidelity poetry and coherent narrative stories with distinct stylistic tones.",
@@ -181,8 +174,7 @@ const myProjects = [
       "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/buhlaluse_ngcobo_capaciti_org_za/Eau_yQlCuoFPiBjQONTz6sUBQWfAPEReo9aBrqmkJNjW9A?e=jTZGYn",
   },
   {
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701241/4_fbhjoa.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701241/4_fbhjoa.png",
     title: "SentiHire Builder",
     description:
       "An intelligent career tool that generates customized, ATS-optimized resumes, ensuring maximum visibility through algorithmic keyword matching and formatting.",
@@ -191,8 +183,7 @@ const myProjects = [
       "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/buhlaluse_ngcobo_capaciti_org_za/Ee5tNuHhE3dFhiklOXHIGMkBlnk8sPkWhz5Qj3NHFBAhxA?e=oWB33O",
   },
   {
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701295/5_xnjxb1.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701295/5_xnjxb1.png",
     title: "SenticoreX Sentiment Analyzer",
     description:
       "A Natural Language Processing (NLP) engine that decodes emotional tone in large-scale text data, transforming customer reviews and social posts into actionable sentiment insights.",
@@ -201,8 +192,7 @@ const myProjects = [
       "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/jereshan_sinan_capaciti_org_za/ETGZ0qtf33NNs78o0RlAkjIBh9MwDnM2YO0b8toGEBP-UQ?e=L3Q0pw",
   },
   {
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701301/6_dcynge.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701301/6_dcynge.png",
     title: "Bias Analysis in Recruitment",
     description:
       "A comprehensive fairness analysis of a hiring dataset using Python and Google Colab. Implemented quantitative metrics to identify gender disparities and applied mitigation algorithms.",
@@ -211,8 +201,7 @@ const myProjects = [
       "https://capeitinitiative-my.sharepoint.com/:w:/g/personal/thato_msina_capaciti_org_za/IQARqR4YKcGzQ56IQQZRZHyQAZllK7dswD8hyOlOqSzilwU?e=NBnnzm",
   },
   {
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701350/7_qdr2dd.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772701350/7_qdr2dd.png",
     title: "AI-Powered Talent Hub",
     description:
       "Designed and implemented a unified Employee Self-Service (ESS) platform for a digital talent accelerator. The solution integrates three distinct AI APIs to automate compliance reporting.",
@@ -227,8 +216,7 @@ export default function AIPage() {
     <div
       className="min-h-screen page-specific-font-br"
       style={{
-        background:
-          "linear-gradient(to bottom right, #A4A4A4, #CCCCCC, #989898)",
+        background: "linear-gradient(to bottom right, #A4A4A4, #CCCCCC, #989898)",
       }}
     >
       {/* Hero Section with 3D Scene */}
@@ -238,7 +226,7 @@ export default function AIPage() {
         </div>
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">
-          <h1 className="text-6xl md:text-9xl text-white leading-tight font-bold tracking-tighter page-specific-font-br">
+          <h1 className="text-6xl md:text-9xl text-white leading-tight page-specific-font-br">
             Artficial Intelligence
           </h1>
         </div>

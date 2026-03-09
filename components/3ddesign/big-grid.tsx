@@ -110,13 +110,13 @@ export const DataGrid = ({ size, src, Title, heading, date, href, color }: DataG
         <footer className="mt-auto flex flex-col gap-1 relative z-10">
           <h2
             className={clsx(
-              "text-sm sm:text-base md:text-lg font-medium uppercase tracking-wider transition-colors duration-300",
+              "text-sm sm:text-base md:text-lg uppercase tracking-wider transition-colors duration-300 page-specific-font",
               headingColorClass
             )}
           >
             {heading}
           </h2>
-          <h3 className={clsx("text-xs sm:text-sm font-mono", textColorClass)}>{date}</h3>
+          <h3 className={clsx("text-xs sm:text-sm page-specific-font", textColorClass)}>{date}</h3>
         </footer>
       </article>
     </Link>

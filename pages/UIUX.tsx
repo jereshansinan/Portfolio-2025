@@ -5,8 +5,6 @@ import Specialising from "../components/uiux/Specialising";
 import Featured from "../components/uiux/Featured";
 import Scene3D from "../components/Scene3D";
 import GridPatternDim from "../components/uiux/GridPatternDim";
-import "../public/fonts/jetbrains.css";
-import "../public/fonts/ppvalve.css";
 
 const myCertificates = [
   {
@@ -16,8 +14,7 @@ const myCertificates = [
     title: "UDEMY Figma - Web and Mobile Projects from Scratch",
     date: "August 2025",
     link: "#",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693725/uiuxcert_g9uqos.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693725/uiuxcert_g9uqos.png",
   },
 ];
 
@@ -83,7 +80,7 @@ export default function UIUX() {
         </div>
 
         <div className="inline-block max-w-4xl text-center relative z-10 px-4">
-          <h1 className="text-6xl md:text-9xl text-white leading-tight font-bold tracking-tighter mix-blend-overlay">
+          <h1 className="text-4xl md:text-6xl text-white leading-tight font-bold tracking-tighter mix-blend-overlay">
             UI/UX DESIGN
           </h1>
         </div>
@@ -95,23 +92,21 @@ export default function UIUX() {
           <div className="max-w-full px-6 md:px-12 lg:px-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4 page-specific-font-pp">
-                <h2 className="text-5xl md:text-8xl leading-[0.9] text-white font-bold tracking-tighter">
+                <h2 className="text-5xl md:text-8xl leading-[0.9] text-white tracking-tighter">
                   Why?
                 </h2>
               </div>
               <div className="lg:col-span-8">
-                <p className="text-xl md:text-3xl text-gray-300 leading-relaxed">
-                  While my career started in software development, my passion
-                  for visuals drives me to make everything I touch look
-                  exceptional. I apply my design principles to every aspect of
-                  my work-from web and mobile interfaces to designing
-                  professional branding assets.
+                <p className="text-xl md:text-3xl text-gray-300 leading-relaxed page-specific-font">
+                  While my career started in software development, my passion for visuals drives me
+                  to make everything I touch look exceptional. I apply my design principles to every
+                  aspect of my work-from web and mobile interfaces to designing professional
+                  branding assets.
                 </p>
-                <p className="mt-8 text-xl md:text-3xl text-gray-300 leading-relaxed">
-                  I view every blank screen as a canvas. Whether it’s a
-                  functional dashboard for a client or a simple layout for a
-                  personal project, I strive to create visuals that communicate
-                  clearly and leave a lasting impression.
+                <p className="mt-8 text-xl md:text-3xl text-gray-300 leading-relaxed page-specific-font">
+                  I view every blank screen as a canvas. Whether it’s a functional dashboard for a
+                  client or a simple layout for a personal project, I strive to create visuals that
+                  communicate clearly and leave a lasting impression.
                 </p>
               </div>
             </div>
@@ -124,21 +119,19 @@ export default function UIUX() {
         <section className="w-full border-b border-gray-700 mt-20 backdrop-blur-[2px]">
           <div className="min-h-[200px] grid grid-cols-1 md:grid-cols-3">
             <div className="flex items-center justify-start p-8 text-left border-b md:border-b-0 md:border-r border-gray-700 col-span-1 md:col-span-1">
-              <h2 className="text-4xl md:text-7xl text-white font-bold page-specific-font-pp">
-                FEATURED
-              </h2>
+              <h2 className="text-4xl md:text-7xl text-white page-specific-font-pp">Featured</h2>
             </div>
 
             <div className="hidden md:block border-r border-gray-700" />
 
             <div className="p-6 flex flex-col justify-end items-end col-span-1">
-              <div className="p-px rounded-[10px] bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md hover:shadow-lg transition-shadow">
+              <div className="p-px rounded-[10px] button-gradientUX shadow-md hover:shadow-lg transition-shadow">
                 <a
                   href="https://www.behance.net/jereshansinan"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="bg-[#171717] hover:bg-black hover:text-white text-white rounded-[9px] px-6 py-2 text-xl font-bold hover:bg-gray-800 transition-colors">
+                  <button className="bg-[#171717] hover:bg-black hover:text-white text-white rounded-[9px] px-6 py-2 text-xl hover:bg-gray-800 transition-colors">
                     View All
                   </button>
                 </a>
@@ -170,8 +163,8 @@ export default function UIUX() {
         />
 
         <section className="pt-20 relative w-full backdrop-blur-[2px] ">
-          <h2 className="text-4xl text-white md:text-7xl font-semibold pb-20 px-8 border-b border-gray-700 page-specific-font-pp">
-            CERTIFICATIONS
+          <h2 className="text-4xl text-white md:text-7xl pb-20 px-8 border-b border-gray-700 page-specific-font-pp">
+            Certifications
           </h2>
         </section>
 

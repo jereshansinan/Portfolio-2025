@@ -13,8 +13,7 @@ const myCertificates = [
     title: "Microsoft Technology Associate",
     date: "December 2020",
     link: "#",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693591/MTACert_tuocjm.jpg",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693591/MTACert_tuocjm.jpg",
   },
   {
     id: 2,
@@ -23,8 +22,7 @@ const myCertificates = [
     title: "FNB Certificate in Full Stack Development",
     date: "July 2025",
     link: "#",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693589/FNBCert_mkzzze.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693589/FNBCert_mkzzze.png",
   },
 ];
 
@@ -50,9 +48,7 @@ export default function Programming() {
         <div className="min-h-[200px] grid grid-cols-1 md:grid-cols-3">
           {/* Column 1 */}
           <div className="flex items-center justify-start p-8 border-b md:border-b-0 md:border-r border-gray-300">
-            <h2 className="text-4xl md:text-7xl text-black font-bold uppercase">
-              Projects
-            </h2>
+            <h2 className="text-4xl md:text-7xl text-black uppercase">Projects</h2>
           </div>
 
           {/* Column 2 - Now an empty cell with a right border */}
@@ -96,7 +92,7 @@ export default function Programming() {
       </div>
 
       <section className="pt-20 relative w-full bg-white">
-        <h2 className="text-4xl text-black md:text-7xl font-semibold pb-20 px-8 border-b border-gray-300">
+        <h2 className="text-4xl text-black md:text-7xl pb-20 px-8 border-b border-gray-300">
           CERTIFICATIONS
         </h2>
       </section>
