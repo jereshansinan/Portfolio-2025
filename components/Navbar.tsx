@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import gsap from "gsap";
@@ -21,6 +21,32 @@ const Navbar: React.FC = () => {
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 500);
+  };
+
+  const getNavbarTextColor = () => {
+    if (location.pathname === "/" || location.pathname === "/3d-design") {
+      return "text-black";
+    }
+
+    if (!isUiUxPage) {
+      return scrolled ? "text-black" : "text-white";
+    }
+
+    return "text-white";
+  };
+
+  const getMenuButtonStyles = () => {
+    if (location.pathname === "/") {
+      return "text-white bg-[#1D1D1B]";
+    }
+
+    if (!isUiUxPage) {
+      return scrolled
+        ? "bg-black text-white hover:bg-white hover:text-black"
+        : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white";
+    }
+
+    return "bg-white text-black hover:bg-[#1D1D1B] hover:text-white";
   };
 
   useEffect(() => {
@@ -165,15 +191,7 @@ const Navbar: React.FC = () => {
               to="/"
               className={clsx(
                 "font-bold text-xl tracking-tighter transition-colors duration-300",
-                location.pathname === "/" || location.pathname === "/3d-design"
-                  ? "text-black"
-                  : !isUiUxPage
-                    ? scrolled
-                      ? "text-black"
-                      : "text-white"
-                    : scrolled
-                      ? "text-white"
-                      : "text-white"
+                getNavbarTextColor()
               )}
             >
               JERESHANSINAN
@@ -185,15 +203,7 @@ const Navbar: React.FC = () => {
               onClick={toggleMenu}
               className={clsx(
                 "nav-menu-btn z-50 inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors focus:outline-none",
-                location.pathname === "/"
-                  ? "text-white bg-[#1D1D1B]"
-                  : !isUiUxPage
-                    ? scrolled
-                      ? "bg-black text-white hover:bg-white hover:text-black"
-                      : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
-                    : scrolled
-                      ? "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
-                      : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
+                getMenuButtonStyles()
               )}
               aria-label="Menu"
             >

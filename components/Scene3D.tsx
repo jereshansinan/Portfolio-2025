@@ -1,7 +1,7 @@
 import React from "react";
 
 interface SceneProps {
-  background: string | string;
+  background: string;
 }
 
 const Scene3D: React.FC<SceneProps> = ({ background }) => {
