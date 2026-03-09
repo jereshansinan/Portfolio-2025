@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { DataGrid } from "../components/3ddesign/big-grid";
 import "../public/fonts/hebra.css";
 import ThreeDProjectsTransition from "@/components/3DDesignPageTransition";

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Dribbble } from "lucide-react";
+import { Github, Linkedin, Dribbble } from "lucide-react";
 import { Project, SkillCategory, SocialLink, NavItem } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
@@ -58,14 +58,7 @@ export const SKILLS: SkillCategory[] = [
   },
   {
     title: "Frontend",
-    skills: [
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Three.js",
-      "Redux",
-      "HTML5/CSS3",
-    ],
+    skills: ["React", "Next.js", "Tailwind CSS", "Three.js", "Redux", "HTML5/CSS3"],
   },
   {
     title: "Backend",

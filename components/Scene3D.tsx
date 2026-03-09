@@ -1,122 +1,19 @@
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Environment,
-  Float,
-  Stars,
-  Sparkles,
-} from "@react-three/drei";
-import * as THREE from "three";
-
-// Fix for missing JSX types in current environment
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      mesh: any;
-      torusKnotGeometry: any;
-      meshStandardMaterial: any;
-      color: any;
-      ambientLight: any;
-      spotLight: any;
-      pointLight: any;
-    }
-  }
-}
+import React from "react";
 
 interface SceneProps {
-  background: string | string;
+  background: string;
 }
 
-const AnimatedShapes = () => {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const meshRef2 = useRef<THREE.Mesh>(null);
-  const meshRef3 = useRef<THREE.Mesh>(null);
-
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.2;
-      meshRef.current.rotation.y += delta * 0.3;
-    }
-    if (meshRef2.current) {
-      meshRef2.current.rotation.x -= delta * 0.15;
-      meshRef2.current.rotation.y -= delta * 0.2;
-    }
-    if (meshRef3.current) {
-      meshRef3.current.rotation.x += delta * 0.1;
-      meshRef3.current.rotation.z += delta * 0.1;
-    }
-  });
-  
-
+const Scene3D: React.FC<SceneProps> = ({ background }) => {
+  const isImage =
+    typeof background === "string" && /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(background);
   return (
-    <>
-      {/* Central massive shape to ensure text overlap */}
-      <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-        <mesh ref={meshRef} scale={3.5}>
-          <torusKnotGeometry args={[1, 0.3, 100, 16]} />
-          <meshStandardMaterial
-            color="#4f46e5"
-            emissive="#4338ca"
-            emissiveIntensity={1}
-            roughness={0.1}
-            metalness={0.8}
-          />
-        </mesh>
-      </Float>
-
-      {/* Scattered background shapes */}
-      <Float speed={2} rotationIntensity={1.5} floatIntensity={1.5}>
-        <mesh ref={meshRef2} position={[-8, 4, -5]} scale={2}>
-          <icosahedronGeometry args={[1, 0]} />
-          <meshStandardMaterial
-            color="#db2777"
-            emissive="#be185d"
-            emissiveIntensity={0.8}
-            roughness={0.2}
-            metalness={0.8}
-          />
-        </mesh>
-      </Float>
-
-      <Float speed={1.8} rotationIntensity={1.2} floatIntensity={1.8}>
-        <mesh ref={meshRef3} position={[8, -4, -5]} scale={2.5}>
-          <octahedronGeometry args={[1, 0]} />
-          <meshStandardMaterial
-            color="#0d9488"
-            emissive="#0f766e"
-            emissiveIntensity={0.8}
-            roughness={0.2}
-            metalness={0.8}
-          />
-        </mesh>
-      </Float>
-    </>
-  );
-};
-
-const Scene3D: React.FC<SceneProps> = ({
-  background
-}) => {
-  const isImage = typeof background === 'string' && /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(background);
-  return (
-    
     <div className="w-full h-full relative">
       {/* VIDEO BACKGROUND (Temporary Placeholder) */}
       {isImage ? (
-        <img
-          src={background}
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
+        <img src={background} alt="Background" className="w-full h-full object-cover" />
       ) : (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
           <source src={background} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

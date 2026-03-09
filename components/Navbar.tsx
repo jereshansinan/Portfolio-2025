@@ -17,11 +17,36 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const location = useLocation();
-  const isUiUxPage =
-    location.pathname === "/ui-ux" || location.pathname === "/data";
+  const isUiUxPage = location.pathname === "/ui-ux" || location.pathname === "/data";
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 500);
+  };
+
+  const getNavbarTextColor = () => {
+    if (location.pathname === "/" || location.pathname === "/3d-design") {
+      return "text-black";
+    }
+
+    if (!isUiUxPage) {
+      return scrolled ? "text-black" : "text-white";
+    }
+
+    return "text-white";
+  };
+
+  const getMenuButtonStyles = () => {
+    if (location.pathname === "/") {
+      return "text-white bg-[#1D1D1B]";
+    }
+
+    if (!isUiUxPage) {
+      return scrolled
+        ? "bg-black text-white hover:bg-white hover:text-black"
+        : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white";
+    }
+
+    return "bg-white text-black hover:bg-[#1D1D1B] hover:text-white";
   };
 
   useEffect(() => {
@@ -31,6 +56,7 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   const toggleMenu = () => {
@@ -58,7 +84,7 @@ const Navbar: React.FC = () => {
           stagger: 0.05,
           duration: 0.5,
         },
-        "<",
+        "<"
       );
 
       tl.to(
@@ -67,7 +93,7 @@ const Navbar: React.FC = () => {
           opacity: 0,
           duration: 0.5,
         },
-        "<",
+        "<"
       );
 
       tl.to(menuContentRef.current, {
@@ -90,7 +116,7 @@ const Navbar: React.FC = () => {
             }
           },
         },
-        "<",
+        "<"
       );
     } else {
       document.body.style.overflow = "hidden";
@@ -117,7 +143,7 @@ const Navbar: React.FC = () => {
           rotation: 0,
           duration: 1.25,
         },
-        "<",
+        "<"
       );
 
       tl.to(
@@ -127,7 +153,7 @@ const Navbar: React.FC = () => {
           duration: 1,
           delay: 0.5,
         },
-        "<",
+        "<"
       );
 
       tl.to(
@@ -139,7 +165,7 @@ const Navbar: React.FC = () => {
           duration: 1,
           delay: 0.5,
         },
-        "<",
+        "<"
       );
 
       tl.to(
@@ -151,7 +177,7 @@ const Navbar: React.FC = () => {
           duration: 1,
           delay: 0.5,
         },
-        "<0.2",
+        "<0.2"
       );
     }
   };
@@ -165,15 +191,7 @@ const Navbar: React.FC = () => {
               to="/"
               className={clsx(
                 "font-bold text-xl tracking-tighter transition-colors duration-300",
-                location.pathname === "/" || location.pathname === "/3d-design"
-                  ? "text-black"
-                  : !isUiUxPage
-                    ? scrolled
-                      ? "text-black"
-                      : "text-white"
-                    : scrolled
-                      ? "text-white"
-                      : "text-white",
+                getNavbarTextColor()
               )}
             >
               JERESHANSINAN
@@ -185,15 +203,7 @@ const Navbar: React.FC = () => {
               onClick={toggleMenu}
               className={clsx(
                 "nav-menu-btn z-50 inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors focus:outline-none",
-                location.pathname === "/"
-                  ? "text-white bg-[#1D1D1B]"
-                  : !isUiUxPage
-                    ? scrolled
-                      ? "bg-black text-white hover:bg-white hover:text-black"
-                      : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
-                    : scrolled
-                      ? "bg-white text-black hover:bg-[#1D1D1B] hover:text-white"
-                      : "bg-white text-black hover:bg-[#1D1D1B] hover:text-white",
+                getMenuButtonStyles()
               )}
               aria-label="Menu"
             >
@@ -203,10 +213,7 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      <div
-        ref={menuOverlayRef}
-        className="menu-overlay px-4 md:px-12 page-specific-font"
-      >
+      <div ref={menuOverlayRef} className="menu-overlay px-4 md:px-12 page-specific-font">
         <button
           className="nav-menu-btn absolute top-6 right-6 z-50 w-10 h-10 rounded-full flex items-center justify-center border border-white text-white hover:bg-[#fff] hover:text-black hover:border-[#fff] transition-colors duration-300"
           onClick={toggleMenu}
@@ -216,17 +223,8 @@ const Navbar: React.FC = () => {
         <div ref={menuContentRef} className="menu-content">
           <div className="menu-items">
             <div className="col-lg">
-              <div
-                ref={menuPreviewImgRef}
-                className="menu-preview-img w-[40%] h-96"
-              >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                >
+              <div ref={menuPreviewImgRef} className="menu-preview-img w-[40%] h-96">
+                <video autoPlay loop muted playsInline className="w-full h-full object-cover">
                   <source
                     src="https://res.cloudinary.com/dxmnledfa/video/upload/v1772691773/hero_navbar_lfxngt.mp4"
                     type="video/mp4"

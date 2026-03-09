@@ -12,6 +12,7 @@ const GridOverlay = ({ isVisible }: { isVisible: boolean }) => {
 
   useEffect(() => {
     if (isVisible) {
+      /* empty */
     } else {
       setStage(0);
     }
@@ -24,10 +25,7 @@ const GridOverlay = ({ isVisible }: { isVisible: boolean }) => {
   const visibleStyle = "opacity-100 translate-y-0";
 
   // Typography helpers
-  const titleStyle =
-    "text-4xl font-bold text-slate-900 dark:text-white uppercase tracking-tighter";
-  const footerStyle =
-    "absolute bottom-6 left-6 text-sm font-mono text-slate-500 uppercase tracking-widest";
+  const titleStyle = "text-4xl font-bold text-slate-900 dark:text-white uppercase tracking-tighter";
 
   return (
     <div
@@ -38,11 +36,7 @@ const GridOverlay = ({ isVisible }: { isVisible: boolean }) => {
         {/* COLUMN 1 */}
         <div className="flex flex-col w-full md:w-1/2 gap-4 h-full">
           {/* Architecture (First to appear) */}
-          <div
-            className={`${baseCardStyle} flex-grow ${
-              stage >= 1 ? visibleStyle : hiddenStyle
-            }`}
-          >
+          <div className={`${baseCardStyle} grow ${stage >= 1 ? visibleStyle : hiddenStyle}`}>
             <div className="p-8 h-full flex flex-col justify-between">
               <h1 className={titleStyle}>3D Architecture</h1>
               <div className="flex justify-between items-end border-t border-slate-300 dark:border-zinc-700 pt-4 mt-auto">
@@ -53,11 +47,7 @@ const GridOverlay = ({ isVisible }: { isVisible: boolean }) => {
           </div>
 
           {/* Portraits (Third to appear) */}
-          <div
-            className={`${baseCardStyle} h-1/3 ${
-              stage >= 3 ? visibleStyle : hiddenStyle
-            }`}
-          >
+          <div className={`${baseCardStyle} h-1/3 ${stage >= 3 ? visibleStyle : hiddenStyle}`}>
             <div className="p-8 h-full flex flex-col justify-center">
               <h1 className={titleStyle}>Portraits</h1>
             </div>
@@ -67,11 +57,7 @@ const GridOverlay = ({ isVisible }: { isVisible: boolean }) => {
         {/* COLUMN 2 */}
         <div className="flex flex-col w-full md:w-1/2 gap-4 h-full">
           {/* Environment (Fourth to appear) */}
-          <div
-            className={`${baseCardStyle} h-1/3 ${
-              stage >= 4 ? visibleStyle : hiddenStyle
-            }`}
-          >
+          <div className={`${baseCardStyle} h-1/3 ${stage >= 4 ? visibleStyle : hiddenStyle}`}>
             <div className="p-8 h-full flex flex-col justify-between">
               <h1 className={titleStyle}>Environment</h1>
               <div className="flex justify-between items-end border-t border-slate-300 dark:border-zinc-700 pt-4 mt-auto">
@@ -82,11 +68,7 @@ const GridOverlay = ({ isVisible }: { isVisible: boolean }) => {
           </div>
 
           {/* Geometry Nodes (Second to appear) */}
-          <div
-            className={`${baseCardStyle} flex-grow ${
-              stage >= 2 ? visibleStyle : hiddenStyle
-            }`}
-          >
+          <div className={`${baseCardStyle} grow ${stage >= 2 ? visibleStyle : hiddenStyle}`}>
             <div className="p-8 h-full flex flex-col justify-center">
               <h1 className={titleStyle}>Geometry Nodes</h1>
             </div>
@@ -105,12 +87,10 @@ interface BackTransitionProps {
   to?: string; // Default to /3d-design
 }
 
-export const BackTransition: React.FC<BackTransitionProps> = ({
-  to = "/3d-design",
-}) => {
+export const BackTransition: React.FC<BackTransitionProps> = ({ to = "/3d-design" }) => {
   const navigate = useNavigate();
   const [isAnimating, setIsAnimating] = useState(false);
-  const [shouldHideContent, setShouldHideContent] = useState(false);
+  const [shouldHideContent] = useState(false);
 
   const handleBackClick = () => {
     // 1. Start the sequence
