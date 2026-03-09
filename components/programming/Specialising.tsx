@@ -109,11 +109,7 @@ const devopsAndTools = [
 
 const SkillItem = ({ item }: { item: (typeof languages)[0] }) => (
   <div className="shrink-0 min-w-[200px] flex flex-col items-start border-r border-gray-300 mr-12 pl-4">
-    <img
-      alt={`${item.name} logo`}
-      className="object-contain w-[100px] h-[100px]"
-      src={item.src}
-    />
+    <img alt={`${item.name} logo`} className="object-contain w-[100px] h-[100px]" src={item.src} />
     <span className="mt-4 text-black text-xl font-bold">{item.name}</span>
     <span className="mt-1 font-semibold text-gradient bg-clip-text text-transparent">
       {item.years}
@@ -143,11 +139,11 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
                 }}
               >
                 {/* Duplicate list for seamless loop */}
-                {items.map((item, index) => (
-                  <SkillItem key={`r-a-${index}`} item={item} />
+                {items.map((item) => (
+                  <SkillItem key={`r-a-${item.name}`} item={item} />
                 ))}
-                {items.map((item, index) => (
-                  <SkillItem key={`r-b-${index}`} item={item} />
+                {items.map((item) => (
+                  <SkillItem key={`r-b-${item.name}`} item={item} />
                 ))}
               </div>
             </div>
@@ -178,11 +174,11 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
                 }}
               >
                 {/* Duplicate list for seamless loop */}
-                {items.map((item, index) => (
-                  <SkillItem key={`s-a-${index}`} item={item} />
+                {items.map((item) => (
+                  <SkillItem key={`s-a-${item.name}`} item={item} />
                 ))}
-                {items.map((item, index) => (
-                  <SkillItem key={`s-b-${index}`} item={item} />
+                {items.map((item) => (
+                  <SkillItem key={`s-b-${item.name}`} item={item} />
                 ))}
               </div>
             </div>
@@ -204,11 +200,7 @@ const Specialising = () => {
       <SkillRow items={languages} title="Languages & Frameworks" />
 
       {/* Row 2: DevOps (Reverse Layout) */}
-      <SkillRow
-        items={devopsAndTools}
-        reverse={true}
-        title="DevOps, Cloud & Tools"
-      />
+      <SkillRow items={devopsAndTools} reverse={true} title="DevOps, Cloud & Tools" />
 
       {/* Animation Styles */}
       <style>{`

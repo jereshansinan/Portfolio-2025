@@ -4,16 +4,23 @@ import gsap from "gsap";
 const Loader: React.FC = () => {
   const counts = useRef<(HTMLDivElement | null)[]>([]);
 
+  const counterDigits = [
+    { id: "00", digits: ["0", "0"] },
+    { id: "22", digits: ["2", "2"] },
+    { id: "58", digits: ["5", "8"] },
+    { id: "77", digits: ["7", "7"] },
+    { id: "99", digits: ["9", "9"] },
+  ];
+
   useEffect(() => {
     const ease = "power4.inOut";
 
-    // Adjusted speeds
-    const animDuration = 1; // Was 1
-    const animStagger = 0.075; // Was 0.075
-    const stepInterval = 0.9; // Was 1 (Controls speed between count numbers)
+    const animDuration = 1;
+    const animStagger = 0.075;
+    const stepInterval = 0.9;
 
     const tl = gsap.timeline({
-      delay: 0.1, // Reduced initial delay
+      delay: 0.1,
       defaults: {
         ease: ease,
       },
@@ -23,7 +30,6 @@ const Loader: React.FC = () => {
       if (!count) return;
       const digits = count.querySelectorAll(".digit h1");
 
-      // Reveal digits
       tl.to(
         digits,
         {
@@ -31,14 +37,10 @@ const Loader: React.FC = () => {
           duration: animDuration,
           stagger: animStagger,
         },
-        index * stepInterval // Tighter timing based on new interval
+        index * stepInterval
       );
 
-      // Hide digits (Move up)
-      if (
-        index < counts.current.length - 1 ||
-        index === counts.current.length - 1
-      ) {
+      if (index < counts.current.length - 1 || index === counts.current.length - 1) {
         tl.to(
           digits,
           {
@@ -46,7 +48,6 @@ const Loader: React.FC = () => {
             duration: animDuration,
             stagger: animStagger,
           },
-          // Start hide animation slightly before the next one starts for overlap
           index * stepInterval + (animDuration - 0.1)
         );
       }
@@ -54,39 +55,39 @@ const Loader: React.FC = () => {
 
     tl.to(".spinner", {
       opacity: 0,
-      duration: 0.2, // Faster fade out
+      duration: 0.2,
     });
 
     tl.to(
       ".word h1",
       {
         y: "0%",
-        duration: 0.6, // Was 1
+        duration: 0.6,
       },
-      "<" // Starts at same time as spinner fade
+      "<"
     );
 
     tl.to("#word-1 h1", {
       y: "100%",
-      duration: 0.6, // Was 1
-      delay: 0, // Removed delay
+      duration: 0.6,
+      delay: 0,
     });
 
     tl.to(
       "#word-2 h1",
       {
         y: "-110%",
-        duration: 0.6, // Was 1
-        delay: 0, // Removed delay
+        duration: 0.6,
+        delay: 0,
       },
-      "<" // Syncs perfectly with word-1
+      "<"
     );
 
     tl.to(".blockb", {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      duration: 0.8, // Was 1
-      stagger: 0.05, // Faster stagger
-      delay: 0, // Removed big delay
+      duration: 0.8,
+      stagger: 0.05,
+      delay: 0,
       onComplete: () => {
         document.querySelector(".loader")?.classList.add("hidden");
       },
@@ -122,22 +123,16 @@ const Loader: React.FC = () => {
       </div>
 
       <div className="counter">
-        {[
-          ["0", "0"],
-          ["2", "2"],
-          ["5", "8"],
-          ["7", "7"],
-          ["9", "9"],
-        ].map((digits, i) => (
+        {counterDigits.map((item, i) => (
           <div
-            key={i}
+            key={item.id}
             className="count"
             ref={(el) => {
               counts.current[i] = el;
             }}
           >
-            {digits.map((digit, j) => (
-              <div key={j} className="digit">
+            {item.digits.map((digit) => (
+              <div key={`${item.id}-${digit}`} className="digit">
                 <h1>{digit}</h1>
               </div>
             ))}

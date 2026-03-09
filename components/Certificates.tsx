@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 import "../public/fonts/jetbrains.css";
 
 interface CertificateProps {
@@ -50,6 +45,7 @@ const Certificates = ({ items }: { items: CertificateProps[] }) => {
     <section
       className="relative w-full cursor-none bg-transparent"
       onMouseMove={handleMouseMove}
+      role="presentation"
     >
       <div className="w-full border-b border-gray-300">
         {items.map((it, idx) => (
