@@ -11,7 +11,6 @@ interface DataGridProps {
   size: "small" | "big";
   href: string;
   color: "red" | "purple" | "blue" | "green" | "grey" | "yellow";
-  isTextWhite?: boolean;
 }
 
 // 1. Map your color keys to hex arrays for Grainient
@@ -37,12 +36,11 @@ export const DataGrid = ({ size, src, Title, heading, date, href, color }: DataG
 
   const activeColors = colorPresets[color];
 
-  const darkGradients = ["purple", "green", "red", "blue", "grey"];
+  const darkGradients = new Set(["purple", "green", "red", "blue", "grey"]);
 
-  const textColorClass = isHovered && darkGradients.includes(color) ? "text-white" : "text-black";
+  const textColorClass = isHovered && darkGradients.has(color) ? "text-white" : "text-black";
 
-  const headingColorClass =
-    isHovered && darkGradients.includes(color) ? "text-white" : "text-gray-800";
+  const headingColorClass = isHovered && darkGradients.has(color) ? "text-white" : "text-gray-800";
 
   return (
     <Link
