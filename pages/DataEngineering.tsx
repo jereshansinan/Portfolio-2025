@@ -1,7 +1,4 @@
-import React from "react";
 import Scene3D from "../components/Scene3D";
-import "../public/fonts/ocr.css";
-import "../public/fonts/jetbrains.css";
 import Certificates from "../components/Certificates";
 import Projects from "@/components/dataengineering/Projects";
 import GradualBlur from "@/components/GradualBlur";
@@ -10,34 +7,24 @@ const ProjectsList = [
   {
     id: "1",
     title: "Data Pipeline Automation",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
     description:
       "Built scalable data pipelines using Apache Airflow and Python to automate ETL processes for a financial services company.",
     tools: ["Apache Airflow", "Python", "Docker"],
     categories: ["Data Engineering", "ETL", "Automation"],
     githubUrl: "#",
-    deliverables: [
-      "Automated ETL pipelines",
-      "Data quality monitoring",
-      "Scalable infrastructure",
-    ],
+    deliverables: ["Automated ETL pipelines", "Data quality monitoring", "Scalable infrastructure"],
   },
   {
     id: "2",
     title: "Data Pipeline Automation",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
     description:
       "Built scalable data pipelines using Apache Airflow and Python to automate ETL processes for a financial services company.",
     tools: ["Apache Airflow", "Python", "Docker"],
     categories: ["Data Engineering", "ETL", "Automation"],
     githubUrl: "#",
-    deliverables: [
-      "Automated ETL pipelines",
-      "Data quality monitoring",
-      "Scalable infrastructure",
-    ],
+    deliverables: ["Automated ETL pipelines", "Data quality monitoring", "Scalable infrastructure"],
   },
 ];
 
@@ -49,8 +36,7 @@ const myCertificates = [
     title: "Oracle Data Science Professional",
     date: "November 2025",
     link: "#",
-    image:
-      "https://res.cloudinary.com/dxmnledfa/image/upload/v1772709596/oracle3_s2o847.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772709596/oracle3_s2o847.png",
   },
   {
     id: 2,

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
-import "../public/fonts/jetbrains.css";
 
 interface CertificateProps {
   id: number;

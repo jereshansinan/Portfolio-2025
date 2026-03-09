@@ -1,6 +1,5 @@
 import React from "react";
 import { DataGrid } from "../components/3ddesign/big-grid";
-import "../public/fonts/hebra.css";
 import ThreeDProjectsTransition from "@/components/3DDesignPageTransition";
 
 const ThreeDDesign: React.FC = () => {

@@ -29,17 +29,15 @@ const Featured: React.FC<FeaturedProps> = ({
       <div className="w-full md:w-1/2 flex flex-col justify-between">
         {/* Top: Description */}
         <div className="pb-8">
-          <p className="text-xl md:text-3xl lg:text-4xl text-gray-200 font-mono leading-tight">
+          <p className="text-md md:text-2xl lg:text-3xl text-gray-200 page-specific-font leading-tight">
             {description}
           </p>
         </div>
 
         {/* Bottom: Title & Number */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pt-8 border-t border-gray-700 md:border-t-0">
-          <h3 className="text-2xl md:text-3xl font-bold text-white font-mono">
-            {title}
-          </h3>
-          <span className="text-xl md:text-2xl font-bold text-gray-400 font-mono mt-4 md:mt-0">
+          <h3 className="text-2xl md:text-3xl text-white page-specific-font">{title}</h3>
+          <span className="text-xl md:text-2xl text-gray-400 page-specific-font mt-4 md:mt-0">
             {String(date)}
           </span>
         </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import "../../public/fonts/ppvalve.css";
 
 const ScrollingCore: React.FC = () => {
   const items = [
@@ -31,7 +30,7 @@ const ScrollingCore: React.FC = () => {
       {items.map((it) => (
         <div key={it.id} className="w-full max-w-[1300px] relative px-4 md:px-[4vw] box-border">
           <div className="absolute left-8 -top-7 flex items-center gap-3 z-40">
-            <div className="bg-white px-3 py-1 rounded-md text-sm font-extrabold shadow-md text-black page-specific-font">
+            <div className="bg-white px-3 py-1 rounded-md text-sm shadow-md text-black page-specific-font">
               {it.label}
             </div>
             <div aria-hidden className="w-[2px] h-[28px] bg-gray-200 ml-1 rounded-sm" />

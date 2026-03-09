@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
-import "../../public/fonts/broft.css";
-import "../../public/fonts/jetbrains.css";
 import { ArrowUpRight } from "lucide-react";
 
 interface ProjectProps {
@@ -43,9 +41,7 @@ const ProjectCard = React.memo(
           onMouseEnter={onMouseLeave}
         >
           <div className="flex flex-col items-start justify-end h-full">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 page-specific-font-br">
-              {title}
-            </h3>
+            <h3 className="text-2xl md:text-3xl text-white mb-2 page-specific-font-br">{title}</h3>
             <p className="text-gray-200 text-sm md:text-lg line-clamp-3 md:line-clamp-none page-specific-font mb-6">
               {description}
             </p>

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Scene3D from "../components/Scene3D";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
-import "../public/fonts/jetbrains.css";
 
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -46,10 +45,7 @@ const CustomCursor = () => {
   }, []);
 
   return (
-    <div
-      ref={cursorRef}
-      className="fixed top-0 left-0 z-50 pointer-events-none"
-    >
+    <div ref={cursorRef} className="fixed top-0 left-0 z-50 pointer-events-none">
       <motion.div
         animate={{
           width: isMenuHovered ? 24 : 96,
@@ -101,7 +97,7 @@ const Home: React.FC = () => {
             />
 
             <div className="relative flex items-center justify-center w-full h-full mix-blend-screen bg-white/90 backdrop-blur-md page-specific-font">
-              <h1 className="text-[17vw] font-bold text-black tracking-tighter leading-[0.85] text-center select-none pointer-events-none">
+              <h1 className="text-[17vw] page-specific-font text-black tracking-tighter leading-[0.85] text-center select-none pointer-events-none">
                 JERESHAN
                 <br />
                 SINAN
@@ -123,7 +119,7 @@ const Home: React.FC = () => {
                   Jereshan Sinan
                 </h1>
                 <p className="text-black page-specific-font text-sm md:text-base">
-                  AI Solutions Engineer • Full Stack Developer
+                  Data Engineer • Full Stack Developer
                 </p>
               </div>
             </div>
@@ -134,17 +130,15 @@ const Home: React.FC = () => {
                 Professional Biography
               </h2>
               <p className="text-sm md:text-lg leading-relaxed">
-                I am a Full Stack Developer who believes that the best digital
-                products live at the intersection of robust engineering and
-                intuitive design. I combine a creative background in 3D and
-                UI/UX with technical discipline to build solutions that are not
-                only functional but exceptional to use. I don't just write code;
-                I solve problems. From streamlining complex customer management
-                processes to creating immersive digital brand experiences. My
-                approach is blending the precision of backend architecture with
-                the creativity of frontend design. I am driven by a passion to
-                help people through technology, creating digital environments
-                that are secure, intelligent, and impactful.
+                I am a Full Stack Developer who believes that the best digital products live at the
+                intersection of robust engineering and intuitive design. I combine a creative
+                background in 3D and UI/UX with technical discipline to build solutions that are not
+                only functional but exceptional to use. I don't just write code; I solve problems.
+                From streamlining complex customer management processes to creating immersive
+                digital brand experiences. My approach is blending the precision of backend
+                architecture with the creativity of frontend design. I am driven by a passion to
+                help people through technology, creating digital environments that are secure,
+                intelligent, and impactful.
               </p>
             </div>
 
@@ -156,16 +150,15 @@ const Home: React.FC = () => {
               <ul className="list-disc list-inside text-sm md:text-lg space-y-2 page-specific-font">
                 <li>Architect scalable Data Engineering pipelines</li>
                 <li>
-                  Advance academic and technical mastery by pursuing a Master’s
-                  degree in Computer Science.
+                  Advance academic and technical mastery by pursuing a Master’s degree in Computer
+                  Science.
                 </li>
                 <li>
-                  Lead cross-functional teams to bridge the gap between creative
-                  design and robust engineering.
+                  Lead cross-functional teams to bridge the gap between creative design and robust
+                  engineering.
                 </li>
                 <li>
-                  Drive industry innovation through active open-source
-                  contribution and mentorship.
+                  Drive industry innovation through active open-source contribution and mentorship.
                 </li>
               </ul>
             </div>
@@ -176,14 +169,7 @@ const Home: React.FC = () => {
                 Competencies
               </h2>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "React",
-                  "TypeScript",
-                  "Next.js",
-                  "Tailwind",
-                  "3D Web",
-                  "UI/UX",
-                ].map((skill) => (
+                {["React", "TypeScript", "Next.js", "Tailwind", "3D Web", "UI/UX"].map((skill) => (
                   <span
                     key={skill}
                     className="text-xs border border-current px-2 py-1 rounded-full opacity-80"
@@ -206,11 +192,7 @@ const Home: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:underline"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.844-1.563 3.042 0 3.604 2.002 3.604 4.604v5.592z" />
                   </svg>
                   LinkedIn
@@ -221,11 +203,7 @@ const Home: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:underline"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 .5c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.7 1.7 2.1.2.2.5.1.6.1.2-.1.3-.2.3-.4v-1.6c-2.7.6-3.3-1.3-3.3-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.7 1.7 2.1.2.2.5.1.6.1.2-.1.3-.2.3-.4v-1.6c-2.7.6-3.3-1.3-3.3-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.7 1.7 2.1.2.2.5.1.6.1.2-.1.3-.2.3-.4v-1.6c-2.7.6-3.3-1.3-3.3-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.7 1.7 2.1.2.2.5.1.6.1.2-.1.3-.2.3-.4v-1.6c-2.7.6-3.3-1.3-3.3-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.7 1.7 2.1.2.2.5.1.6.1.2-.1.3-.2.3-.4v-1.6c-2.7.6-3.3-1.3-3.3-1.3-.5-1.1-1.2-1.4-1.2-1.4-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1z" />
                   </svg>
                   GitHub
@@ -255,9 +233,7 @@ const Home: React.FC = () => {
                 Contact Me
               </h2>
               <div className="mt-auto">
-                <p className="text-sm mb-2 opacity-80">
-                  Interested in working together?
-                </p>
+                <p className="text-sm mb-2 opacity-80">Interested in working together?</p>
                 <a
                   href="mailto:youremail@example.com"
                   className="text-lg font-medium hover:underline"

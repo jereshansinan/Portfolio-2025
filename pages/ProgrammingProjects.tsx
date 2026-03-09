@@ -1,4 +1,3 @@
-import React from "react";
 import Scene3D from "../components/Scene3D";
 import ProjectRow from "../components/programming/ProjectRow";
 
@@ -12,7 +11,7 @@ export default function ProgrammingProjects() {
         </div>
 
         <div className="inline-block max-w-xl text-center relative z-10 px-4">
-          <h1 className="text-4xl md:text-6xl text-white leading-tight font-bold tracking-tighter">
+          <h1 className="text-4xl md:text-6xl text-white leading-tight tracking-tighter">
             Programming
           </h1>
         </div>
@@ -20,9 +19,7 @@ export default function ProgrammingProjects() {
 
       <section className="w-full border-b border-gray-300 bg-white">
         <div className="p-8 text-left">
-          <h2 className="text-4xl md:text-7xl page-specific-font text-black font-bold">
-            ALL WORK
-          </h2>
+          <h2 className="text-4xl md:text-7xl page-specific-font text-black">ALL WORK</h2>
         </div>
       </section>
 

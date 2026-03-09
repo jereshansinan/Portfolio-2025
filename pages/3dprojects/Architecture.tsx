@@ -166,13 +166,13 @@ export default function Architecture() {
                 <h2 className="text-5xl md:text-8xl text-black">Why?</h2>
               </div>
               <div className="lg:col-span-8">
-                <p className="text-xl md:text-3xl text-black leading-relaxed font-light">
+                <p className="text-xl md:text-3xl text-black leading-relaxed font-light page-specific-font">
                   My work in 3D architecture focuses on transforming concepts into tangible,
                   photorealistic environments. I combine technical precision with artistic direction
                   to create detailed models and renders that accurately represent scale, material,
                   and lighting.
                 </p>
-                <p className="mt-8 text-xl md:text-3xl text-black leading-relaxed font-light">
+                <p className="mt-8 text-xl md:text-3xl text-black leading-relaxed font-light page-specific-font">
                   Whether visualizing modern interiors or complex exterior structures, I prioritize
                   clarity and realism. I treat each project as a functional design challenge,
                   ensuring that the final visuals not only look impressive but effectively

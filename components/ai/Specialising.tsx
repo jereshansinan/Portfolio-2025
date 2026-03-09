@@ -53,8 +53,8 @@ const aiTools = [
 const SkillItem = ({ item }: { item: (typeof aiFrameworks)[0] }) => (
   <div className="shrink-0 min-w-[200px] flex flex-col items-start border-r border-gray-300 mr-12 pl-4">
     <img alt={`${item.name} logo`} className="object-contain w-[100px] h-[100px]" src={item.src} />
-    <span className="mt-4 text-black text-2xl md:text-3xl font-bold">{item.name}</span>
-    <span className="mt-1 font-semibold text-2xl md:text-2xl text-black">{item.years}</span>
+    <span className="mt-4 text-black text-2xl md:text-3xl">{item.name}</span>
+    <span className="mt-1 text-2xl md:text-2xl text-black">{item.years}</span>
   </div>
 );
 
@@ -88,7 +88,7 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
 
             {/* 2. Title Section (Right) */}
             <div className="col-span-1 p-8 flex items-center justify-center lg:justify-start order-1 lg:order-2 border-b lg:border-b-0 border-gray-300">
-              <h3 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
+              <h3 className="text-3xl md:text-4xl text-black">
                 {title}
               </h3>
             </div>
@@ -96,7 +96,7 @@ const SkillRow = ({ title, items, reverse = false }: SkillRowProps) => {
         ) : (
           <>
             <div className="col-span-1 p-8 border-r border-gray-300 flex items-center border-b lg:border-b-0">
-              <h3 className="text-3xl md:text-4xl font-semibold text-black leading-tight">
+              <h3 className="text-3xl md:text-4xl text-black">
                 {title}
               </h3>
             </div>
