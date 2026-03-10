@@ -13,8 +13,8 @@ const ProjectRow: React.FC<ProjectsProps> = ({ number, title, description, image
     <div className="w-full grid grid-cols-1 md:grid-cols-3 min-h-[400px] border-b border-gray-300 bg-white">
       {/* Column 1 */}
       <div className="flex flex-col justify-center p-8 border-b md:border-b-0 md:border-r border-gray-300">
-        <div className="rounded-[10px] p-px button-gradient w-12 h-12 flex items-center justify-center mb-8">
-          <div className="bg-white rounded-md w-full h-full flex items-center justify-center font-bold text-black">
+        <div className="rounded-[10px] p-px project-no-gradient w-12 h-12 flex items-center justify-center mb-8">
+          <div className="bg-white rounded-md w-full h-full flex items-center justify-center text-black">
             {number}
           </div>
         </div>

@@ -1,51 +1,84 @@
-import React from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import SplitType from "split-type";
 import { Link } from "react-router-dom";
-import "../public/css/BlurLiftButton.css";
 
-const BlurLiftButton = ({ text, to }) => {
-  const letters = text.split("");
+export default function StaggerButton({
+  href = "",
+  style = "",
+  text = "Hover me",
+  direction = "up",
+  reverse = true,
+  stagger = 0.035,
+  duration = 0.5,
+  ease = "expo.inOut",
+}) {
+  const buttonRef = useRef(null);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const button = buttonRef.current;
+    const textEl = textRef.current;
+
+    if (!button || !textEl) return;
+
+    // Clone the text for animation
+    const textClone = textEl.cloneNode(true);
+    textClone.style.position = "absolute";
+    textClone.style.left = "0";
+    textClone.style.width = "100%";
+
+    textEl.after(textClone);
+
+    const textSplit = new SplitType(textEl, { types: "chars" });
+    const clonedSplit = new SplitType(textClone, { types: "chars" });
+
+    // Timeline with bounce + blur
+    const tl = gsap.timeline({ paused: true, defaults: { duration, stagger } });
+
+    if (direction === "up") {
+      textClone.style.top = "100%";
+      tl.to(textSplit.chars, {
+        yPercent: -150,
+        ease: "back.out(1.2)",
+      }).to(clonedSplit.chars, { yPercent: -150, ease: "back.out(1.2)" }, "<");
+    }
+
+    if (direction === "down") {
+      textClone.style.top = "-100%";
+      tl.to(textSplit.chars, {
+        yPercent: 150,
+        ease: "back.out(1.2)",
+      }).to(clonedSplit.chars, { yPercent: 150, ease: "back.out(1.4)" }, "<");
+    }
+
+    const handleEnter = () => tl.restart();
+    const handleLeave = () => {
+      if (reverse) tl.reverse();
+      else gsap.to([...textSplit.chars, ...clonedSplit.chars], { filter: "blur(0px)" });
+    };
+
+    button.addEventListener("mouseenter", handleEnter);
+    button.addEventListener("mouseleave", handleLeave);
+
+    return () => {
+      button.removeEventListener("mouseenter", handleEnter);
+      button.removeEventListener("mouseleave", handleLeave);
+      textSplit.revert();
+      clonedSplit.revert();
+    };
+  }, [direction, reverse, stagger, duration, ease]);
 
   return (
-    <div className="p-8 flex flex-col justify-end items-end">
-      <div className="p-[1.5px] rounded-[10px] button-gradient shadow-md hover:shadow-lg transition-all">
-        <Link to={to}>
-          <button className="button-blur-lift px-6 py-2 text-xl rounded-[9px] bg-white text-black">
-            <span className="button-blur-lift__background"></span>
-            <span className="button-blur-lift__screen-reader-text">{text}</span>
-
-            {/* Original letters */}
-            {letters.map((letter, index) => (
-              <span
-                key={`letter-${index}`}
-                className="button-blur-lift__letter-outer"
-                style={{ "--index-outer": index } as any}
-              >
-                <span className="button-blur-lift__letter" style={{ "--index": index } as any}>
-                  {letter}
-                </span>
-              </span>
-            ))}
-
-            {/* Hover letters */}
-            {letters.map((letter, index) => (
-              <span
-                key={`hover-letter-${index}`}
-                className="button-blur-lift__hover-letter-outer"
-                style={{ "--index-outer": index } as any}
-              >
-                <span
-                  className="button-blur-lift__hover-letter"
-                  style={{ "--index": index } as any}
-                >
-                  {letter}
-                </span>
-              </span>
-            ))}
-          </button>
-        </Link>
-      </div>
-    </div>
+    <Link to={href}>
+      <button
+        ref={buttonRef}
+        className={`${style} relative overflow-hidden px-6 py-3 border rounded-full`}
+      >
+        <span ref={textRef} className="relative block whitespace-nowrap page-specific-font">
+          {text}
+        </span>
+      </button>
+    </Link>
   );
-};
-
-export default BlurLiftButton;
+}

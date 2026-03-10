@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import Certificates from "../components/Certificates";
 import ProjectRow from "../components/programming/ProjectRow";
 import Specialising from "../components/programming/Specialising";
 import Scene3D from "../components/Scene3D";
 import "../public/fonts/jetbrains.css";
+import StaggerButton from "@/components/BlurLiftButton";
 
 const myCertificates = [
   {
@@ -55,14 +55,8 @@ export default function Programming() {
           <div className="hidden md:block border-r border-gray-300" />
 
           {/* Column 3 */}
-          <div className="p-8 flex flex-col justify-end items-end">
-            <div className="p-[1.5px] rounded-[10px] button-gradient shadow-md hover:shadow-lg transition-all">
-              <Link to="/programming/projects">
-                <button className="bg-white text-black rounded-[9px] px-6 py-2 text-xl hover:bg-black hover:text-white transition-colors">
-                  View All
-                </button>
-              </Link>
-            </div>
+          <div className="p-8 flex flex-col justify-end items-end page-specific-font">
+            <StaggerButton text="View All" style="button-gradient" href="/programming/projects" />
           </div>
         </div>
       </section>

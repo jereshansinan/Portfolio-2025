@@ -5,6 +5,7 @@ import Specialising from "../components/uiux/Specialising";
 import Featured from "../components/uiux/Featured";
 import Scene3D from "../components/Scene3D";
 import GridPatternDim from "../components/uiux/GridPatternDim";
+import StaggerButton from "@/components/BlurLiftButton";
 
 const myCertificates = [
   {
@@ -125,17 +126,11 @@ export default function UIUX() {
             <div className="hidden md:block border-r border-gray-700" />
 
             <div className="p-6 flex flex-col justify-end items-end col-span-1">
-              <div className="p-px rounded-[10px] button-gradientUX shadow-md hover:shadow-lg transition-shadow">
-                <a
-                  href="https://www.behance.net/jereshansinan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="bg-[#171717] hover:bg-black hover:text-white text-white rounded-[9px] px-6 py-2 text-xl hover:bg-gray-800 transition-colors">
-                    View All
-                  </button>
-                </a>
-              </div>
+              <StaggerButton
+                text="View All"
+                style="button-gradientUX"
+                href="https://www.behance.net/jereshansinan"
+              />
             </div>
           </div>
         </section>
