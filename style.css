@@ -123,11 +123,48 @@
 }
 
 .button-gradient {
-  background-image: linear-gradient(to right, #ff3f3f, #28ffb4, #8833ff);
+  position: relative;
   display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 3px solid transparent;
+  border-radius: 0.5rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(black, black), linear-gradient(to right, #ff3f3f, #28ffb4, #8833ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.4s ease;
+}
+
+.project-no-gradient {
+  position: relative;
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 3px solid transparent;
+  border-radius: 0.5rem;
+
+  background-image: linear-gradient(to right, #ff3f3f, #28ffb4, #8833ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.4s ease;
 }
 
 .button-gradientUX {
-  background-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  position: relative;
   display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 3px solid transparent;
+  border-radius: 0.5rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(black, black), linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.4s ease;
 }
