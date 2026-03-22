@@ -6,25 +6,80 @@ import Projects from "@/components/dataengineering/Projects";
 const ProjectsList = [
   {
     id: "1",
-    title: "Data Pipeline Automation",
-    image: "/images/data-pipeline.jpg",
+    title: "Customer Segmentation Analysis",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
     description:
-      "Built scalable data pipelines using Apache Airflow and Python to automate ETL processes for a financial services company.",
-    tools: ["Apache Airflow", "Python", "Docker"],
-    categories: ["Data Engineering", "ETL", "Automation"],
-    githubUrl: "#",
-    deliverables: ["Automated ETL pipelines", "Data quality monitoring", "Scalable infrastructure"],
+      "Developed an end-to-end segmentation model in Power BI, categorizing customers by spending patterns and demographic data to optimize marketing ROI.",
+    tools: ["Power BI", "DAX", "Python"],
+    categories: ["Data Analytics", "Customer Insights", "Visualization"],
+    githubUrl: "https://github.com/your-repo/segmentation",
+    deliverables: [
+      "Interactive Power BI Dashboard",
+      "Segmentation Logic Doc",
+      "Cleaned Customer Dataset",
+    ],
+    extraFiles: [
+      {
+        name: "customer_clusters.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-data-cube.jpg",
+      },
+      {
+        name: "segmentation_logic.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-logic-node.jpg",
+      },
+    ],
   },
   {
     id: "2",
-    title: "Data Pipeline Automation",
-    image: "/images/data-pipeline.jpg",
+    title: "Sales vs. Target Forecasting",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
     description:
-      "Built scalable data pipelines using Apache Airflow and Python to automate ETL processes for a financial services company.",
-    tools: ["Apache Airflow", "Python", "Docker"],
-    categories: ["Data Engineering", "ETL", "Automation"],
-    githubUrl: "#",
-    deliverables: ["Automated ETL pipelines", "Data quality monitoring", "Scalable infrastructure"],
+      "Built a multi-year sales performance tracker with dynamic scenario analysis, comparing actual revenue against regional targets using advanced Excel and Power Query.",
+    tools: ["Excel", "Power Query", "Scenario Manager"],
+    categories: ["Financial Reporting", "Data Engineering", "Excel Mastery"],
+    githubUrl: "https://github.com/your-repo/sales-tracker",
+    deliverables: [
+      "Dynamic Sales Dashboard",
+      "Data Pipeline Documentation",
+      "Historical Sales CSV",
+    ],
+    extraFiles: [
+      {
+        name: "sales_pipeline_docs.docx",
+        type: "Documentation",
+        preview: "https://your-storage.com/purple-blueprint.jpg",
+      },
+      {
+        name: "raw_sales_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-infinite-grid.jpg",
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
   },
 ];
 
