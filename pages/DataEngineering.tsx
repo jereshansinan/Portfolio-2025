@@ -7,7 +7,7 @@ const ProjectsList = [
   {
     id: "1",
     title: "Customer Segmentation Analysis",
-    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616704/11_h2vg3l.png",
     description:
       "Developed an end-to-end segmentation model in Power BI, categorizing customers by spending patterns and demographic data to optimize marketing ROI.",
     tools: ["Power BI", "DAX", "Python"],
@@ -34,7 +34,7 @@ const ProjectsList = [
   {
     id: "2",
     title: "Sales vs. Target Forecasting",
-    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616714/image_7_zijjts.png",
     description:
       "Built a multi-year sales performance tracker with dynamic scenario analysis, comparing actual revenue against regional targets using advanced Excel and Power Query.",
     tools: ["Excel", "Power Query", "Scenario Manager"],
@@ -61,7 +61,168 @@ const ProjectsList = [
   {
     id: "3",
     title: "Python Data Visualization Suite",
-    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1772693488/vucadigital_w0hbiq.png",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616699/image_2_zac7gt.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
+  },
+  {
+    id: "4",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616703/image_8_md6lbo.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
+  },
+  {
+    id: "5",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616708/image_3_hsamr0.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
+  },
+  {
+    id: "6",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616713/image_6_f00yse.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
+  },
+  {
+    id: "7",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616703/image_4_t4w4oy.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
+  },
+  {
+    id: "8",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616704/image_5_ouxylr.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
+  },
+  {
+    id: "9",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616705/image_1_bgo7sb.png",
+    description:
+      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+    tools: ["Python", "Seaborn", "Plotly"],
+    categories: ["Automation", "Data Science", "Python"],
+    githubUrl: "https://github.com/your-repo/python-viz",
+    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
+    extraFiles: [
+      {
+        name: "visualization_engine.ipynb",
+        type: "Jupyter Notebook",
+        preview: "https://your-storage.com/purple-flowing-script.jpg",
+      },
+      {
+        name: "processed_report_data.csv",
+        type: "Dataset",
+        preview: "https://your-storage.com/purple-layered-strata.jpg",
+      },
+    ],
+  },
+  {
+    id: "10",
+    title: "Python Data Visualization Suite",
+    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616699/image_2_zac7gt.png",
     description:
       "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
     tools: ["Python", "Seaborn", "Plotly"],
