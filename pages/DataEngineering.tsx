@@ -1,4 +1,3 @@
-import React from "react";
 import Scene3D from "../components/Scene3D";
 import Certificates from "../components/Certificates";
 import Projects from "@/components/dataengineering/Projects";
@@ -6,12 +5,12 @@ import Projects from "@/components/dataengineering/Projects";
 const ProjectsList = [
   {
     id: "1",
-    title: "Customer Segmentation Analysis",
+    title: "Multi-Year Sales vs Target",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616704/11_h2vg3l.png",
     description:
-      "Developed an end-to-end segmentation model in Power BI, categorizing customers by spending patterns and demographic data to optimize marketing ROI.",
+      "Engineering a high-performance Sales_Fact table with full relational mapping for multi-year historical data comparison.",
     tools: ["Power BI", "DAX", "Python"],
-    categories: ["Data Analytics", "Customer Insights", "Visualization"],
+    categories: ["Advanced Data Modeling", "Relational Integrity", "Sales Analytics"],
     githubUrl: "https://github.com/your-repo/segmentation",
     deliverables: [
       "Interactive Power BI Dashboard",
@@ -33,12 +32,12 @@ const ProjectsList = [
   },
   {
     id: "2",
-    title: "Sales vs. Target Forecasting",
+    title: "BI Reporting for Management",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616714/image_7_zijjts.png",
     description:
-      "Built a multi-year sales performance tracker with dynamic scenario analysis, comparing actual revenue against regional targets using advanced Excel and Power Query.",
+      "Development of a multi-layered BI suite that transforms raw business performance metrics into interactive executive summaries.",
     tools: ["Excel", "Power Query", "Scenario Manager"],
-    categories: ["Financial Reporting", "Data Engineering", "Excel Mastery"],
+    categories: ["Business Intelligence", "Power Query", "Applied Analytics"],
     githubUrl: "https://github.com/your-repo/sales-tracker",
     deliverables: [
       "Dynamic Sales Dashboard",
@@ -60,12 +59,12 @@ const ProjectsList = [
   },
   {
     id: "3",
-    title: "Python Data Visualization Suite",
+    title: "Employee Analytics Dashboard",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616699/image_2_zac7gt.png",
     description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+      "Implementation of complex cleaning scripts to handle null values, duplicates, and inconsistent formatting in financial records.",
     tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
+    categories: ["Data Cleaning", "Quality Assurance", "Error Handling"],
     githubUrl: "https://github.com/your-repo/python-viz",
     deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
     extraFiles: [
@@ -83,12 +82,12 @@ const ProjectsList = [
   },
   {
     id: "4",
-    title: "Python Data Visualization Suite",
+    title: "Customer Segmentation Analysis",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616703/image_8_md6lbo.png",
     description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+      "Engineering custom DAX logic to classify customers into spending tiers (Low, Medium, High) based on transactional frequency and volume.",
     tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
+    categories: ["Behavioral Modeling", "Customer Segmentation", "DAX"],
     githubUrl: "https://github.com/your-repo/python-viz",
     deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
     extraFiles: [
@@ -106,12 +105,12 @@ const ProjectsList = [
   },
   {
     id: "5",
-    title: "Python Data Visualization Suite",
+    title: "Exploratory Data Analysis & Stats",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616708/image_3_hsamr0.png",
     description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+      "Exploratory Data Analysis (EDA) focused on identifying trends, outliers, and statistical distributions within business metrics.",
     tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
+    categories: ["EDA", "Descriptive Statistics", "Trend Identification"],
     githubUrl: "https://github.com/your-repo/python-viz",
     deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
     extraFiles: [
@@ -129,12 +128,12 @@ const ProjectsList = [
   },
   {
     id: "6",
-    title: "Python Data Visualization Suite",
+    title: "Transactional Fact Engineering",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616713/image_6_f00yse.png",
     description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+      'Consolidating disparate transaction logs and master data into a centralized "Single Source of Truth" using Power Query.',
     tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
+    categories: ["Data Ingestion", "ETL Design", "Power Query"],
     githubUrl: "https://github.com/your-repo/python-viz",
     deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
     extraFiles: [
@@ -152,12 +151,12 @@ const ProjectsList = [
   },
   {
     id: "7",
-    title: "Python Data Visualization Suite",
+    title: "Narrative Visualization Systems",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616703/image_4_t4w4oy.png",
     description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+      "Transforming raw tabular data into visual storytelling assets in Excel to highlight critical business successes and failures.",
     tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
+    categories: ["Data Storytelling", "Visualization", "Excel Reporting"],
     githubUrl: "https://github.com/your-repo/python-viz",
     deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
     extraFiles: [
@@ -175,12 +174,12 @@ const ProjectsList = [
   },
   {
     id: "8",
-    title: "Python Data Visualization Suite",
+    title: "Comparative Variance Modeling",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616704/image_5_ouxylr.png",
     description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+      "Synchronizing actual sales data with target budget datasets to calculate real-time performance variances across regions.",
     tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
+    categories: ["Performance Analysis", "Variance Tracking", "Interactivity"],
     githubUrl: "https://github.com/your-repo/python-viz",
     deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
     extraFiles: [
@@ -198,35 +197,12 @@ const ProjectsList = [
   },
   {
     id: "9",
-    title: "Python Data Visualization Suite",
+    title: "Multi-Source Data Ingestion",
     image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616705/image_1_bgo7sb.png",
     description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
+      "Collection and consolidation of disparate raw datasets using Python and Excel to create a unified data entry point.",
     tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
-    githubUrl: "https://github.com/your-repo/python-viz",
-    deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
-    extraFiles: [
-      {
-        name: "visualization_engine.ipynb",
-        type: "Jupyter Notebook",
-        preview: "https://your-storage.com/purple-flowing-script.jpg",
-      },
-      {
-        name: "processed_report_data.csv",
-        type: "Dataset",
-        preview: "https://your-storage.com/purple-layered-strata.jpg",
-      },
-    ],
-  },
-  {
-    id: "10",
-    title: "Python Data Visualization Suite",
-    image: "https://res.cloudinary.com/dxmnledfa/image/upload/v1774616699/image_2_zac7gt.png",
-    description:
-      "Automated reporting suite utilizing Matplotlib, Seaborn, and Plotly to generate high-fidelity visual reports from complex relational datasets.",
-    tools: ["Python", "Seaborn", "Plotly"],
-    categories: ["Automation", "Data Science", "Python"],
+    categories: ["Data Collection", "Excel Integration", "Python"],
     githubUrl: "https://github.com/your-repo/python-viz",
     deliverables: ["Automated PDF Reports", "Interactive Plotly HTML", "Source Analysis Notebook"],
     extraFiles: [
@@ -267,14 +243,14 @@ export default function DataEngineering() {
           </div>
 
           <div className="inline-block max-w-xl text-center relative z-10 px-4">
-            <h1 className="text-4xl md:text-6xl text-white leading-tight font-bold tracking-tight page-specific-font-br">
+            <h1 className="text-4xl md:text-7xl text-white font-bold page-specific-font-mag">
               Data Engineering
             </h1>
           </div>
         </section>
 
         <section className="pt-20 relative w-full">
-          <h2 className="text-4xl text-white md:text-7xl font-semibold pb-20 px-8 border-b border-gray-300">
+          <h2 className="text-4xl text-white md:text-7xl pb-20 px-8 border-b border-gray-300 page-specific-font-mag">
             PROJECTS
           </h2>
         </section>
@@ -282,7 +258,7 @@ export default function DataEngineering() {
         <Projects projects={ProjectsList} />
 
         <section className="pt-20 relative w-full">
-          <h2 className="text-4xl text-white md:text-7xl font-semibold pb-20 px-8 border-b border-gray-300">
+          <h2 className="text-4xl text-white md:text-7xl page-specific-font-mag pb-20 px-8 border-b border-gray-300">
             CERTIFICATIONS
           </h2>
         </section>
