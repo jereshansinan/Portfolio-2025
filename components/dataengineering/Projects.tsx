@@ -119,7 +119,7 @@ function Slide({ project, index, total, sectionId }: SlideProps) {
           </div>
         )}
 
-        {/* Scroll-to-next indicator — sits on the border between panels */}
+        {/* Scroll-to-next indicator */}
         {!isLast && (
           <a
             href={`#${nextId}`}
@@ -136,7 +136,6 @@ function Slide({ project, index, total, sectionId }: SlideProps) {
             }}
             aria-label="Next slide"
           >
-            {/* Animated vertical line */}
             <div
               className="projects-scroll-line absolute w-px top-0"
               style={{
@@ -146,7 +145,6 @@ function Slide({ project, index, total, sectionId }: SlideProps) {
                 opacity: 0.7,
               }}
             />
-            {/* Label */}
             <span
               className="text-[9px] font-mono tracking-[0.2em] uppercase z-10"
               style={{ color: accentColor, opacity: 0.8 }}
@@ -161,7 +159,7 @@ function Slide({ project, index, total, sectionId }: SlideProps) {
 
   const imagePanel = (
     <div className="relative flex-1 overflow-hidden bg-[#0d0d0d]">
-      {/* ── Parallax background (coverImage or fallback to image) ── */}
+      {/* Parallax background */}
       <div
         className="projects-img-wrap absolute left-0 w-full"
         style={{ height: "160vh", top: "-30vh" }}
@@ -174,11 +172,10 @@ function Slide({ project, index, total, sectionId }: SlideProps) {
           warpStrength={1}
           className="w-full h-full"
         />
-        {/* Dark scrim so the dashboard screenshot pops */}
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.55)" }} />
       </div>
 
-      {/* ── Dashboard screenshot — centred overlay, not cropped ── */}
+      {/* Dashboard screenshot — centred overlay */}
       <div className="absolute inset-0 z-10 flex items-center justify-center p-8 md:p-12">
         <img
           src={project.image}
@@ -226,6 +223,31 @@ export default function Projects({ projects }: ProjectsProps) {
 
     gsap.set(container, { autoAlpha: 1 });
 
+    // ── Snap ─────────────────────────────────────────────────────────────────
+    // A single ScrollTrigger on the whole container. snapTo receives the
+    // current scroll progress (0–1) and returns the nearest slide's progress
+    // value, so only one snap fires per gesture — no double-jumping.
+    ScrollTrigger.create({
+      trigger: container,
+      start: "top top",
+      end: "bottom bottom",
+      snap: {
+        snapTo: (progress) => {
+          const n = slides.length;
+          if (n <= 1) return 0;
+          // Each slide sits at an evenly-spaced progress position
+          const positions = Array.from({ length: n }, (_, i) => i / (n - 1));
+          // Return whichever position is closest to where the user stopped
+          return positions.reduce((nearest, pos) =>
+            Math.abs(pos - progress) < Math.abs(nearest - progress) ? pos : nearest
+          );
+        },
+        duration: { min: 0.4, max: 0.9 },
+        delay: 0.1, // wait until the user clearly stops scrolling
+        ease: "power2.inOut",
+      },
+    });
+
     // ── Slide entrance animations ────────────────────────────────────────────
     slides.forEach((slide) => {
       const lineInners = slide.querySelectorAll<HTMLElement>(".projects-line-inner");
@@ -253,14 +275,14 @@ export default function Projects({ projects }: ProjectsProps) {
         .to(scrollLink, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.6);
     });
 
-    // ── Parallax background images ───────────────────────────────────────────
+    // ── Parallax background ──────────────────────────────────────────────────
     slides.forEach((slide) => {
       const imgWraps = slide.querySelectorAll<HTMLElement>(".projects-img-wrap");
       gsap.fromTo(
         imgWraps,
-        { y: "-30vh" },
+        { y: "-50vh" },
         {
-          y: "30vh",
+          y: "50vh",
           ease: "none",
           scrollTrigger: {
             trigger: slide,
@@ -279,11 +301,8 @@ export default function Projects({ projects }: ProjectsProps) {
 
       const onClick = (e: Event) => {
         e.preventDefault();
-        gsap.to(window, {
-          duration: 2,
-          scrollTo: { y: href },
-          ease: "power2.inOut",
-        });
+        slideIdRef.current = Math.min(slideIdRef.current + 1, slides.length - 1);
+        gsap.to(window, { duration: 2, scrollTo: { y: href }, ease: "power2.inOut" });
       };
       const onOver = () =>
         line &&
@@ -295,12 +314,7 @@ export default function Projects({ projects }: ProjectsProps) {
         });
       const onOut = () =>
         line &&
-        gsap.to(line, {
-          scaleY: 1,
-          transformOrigin: "top center",
-          duration: 0.5,
-          ease: "power3",
-        });
+        gsap.to(line, { scaleY: 1, transformOrigin: "top center", duration: 0.5, ease: "power3" });
 
       link.addEventListener("click", onClick);
       link.addEventListener("mouseover", onOver);
