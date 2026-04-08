@@ -20,7 +20,7 @@ const Certificates = ({ items }: { items: CertificateProps[] }) => {
   const cursorY = useMotionValue(0);
 
   // Spring config for smooth follow
-  const springConfig = { stiffness: 300, damping: 40 };
+  const springConfig = { stiffness: 100, damping: 20 };
   const smoothX = useSpring(cursorX, springConfig);
   const smoothY = useSpring(cursorY, springConfig);
 
